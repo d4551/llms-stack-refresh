@@ -1,0 +1,249 @@
+# Tailwind CSS
+
+> A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+
+Tailwind CSS v4 is a major rewrite that uses a CSS-first configuration approach with `@import "tailwindcss"` and `@theme` instead of `tailwind.config.js`. The CDN is available via `<script src="https://cdn.tailwindcss.com"></script>`.
+
+## Getting Started
+
+- [Installation](https://tailwindcss.com/docs/installation): Install Tailwind CSS as a PostCSS plugin, with Vite, or via CDN
+- [Styling with Utility Classes](https://tailwindcss.com/docs/styling-with-utility-classes): Understand the utility-first workflow
+- [Hover, Focus & Other States](https://tailwindcss.com/docs/hover-focus-and-other-states): Apply styles on hover, focus, and other states with modifier syntax (e.g., `hover:bg-blue-500`)
+- [Responsive Design](https://tailwindcss.com/docs/responsive-design): Apply responsive breakpoint variants (sm, md, lg, xl, 2xl)
+- [Dark Mode](https://tailwindcss.com/docs/dark-mode): Use `dark:` variant with `@media (prefers-color-scheme)` or class strategy
+- [Reusing Styles](https://tailwindcss.com/docs/adding-custom-styles): Extract components with `@apply`, use CSS variables, or component extraction patterns
+- [Detecting Classes in Source Files](https://tailwindcss.com/docs/detecting-classes-in-source-files): How Tailwind scans source files and generates only used CSS
+- [Editor Setup](https://tailwindcss.com/docs/editor-setup): VS Code IntelliSense plugin and Prettier formatter setup
+- [Upgrade Guide](https://tailwindcss.com/docs/upgrade-guide): Migrating from Tailwind CSS v3 to v4
+- [Compatibility](https://tailwindcss.com/docs/compatibility): Browser and framework compatibility information
+
+## Configuration
+
+- [Theme](https://tailwindcss.com/docs/theme): Customize your design tokens using `@theme` in CSS (v4) or `tailwind.config.js` (v3)
+- [Colors](https://tailwindcss.com/docs/colors): Default color palette and how to customize or extend it
+- [Functions and Directives](https://tailwindcss.com/docs/functions-and-directives): `@tailwind`, `@layer`, `@apply`, `@config`, `@plugin`, `@utility`, `@variant`, `@custom-variant`, `@source`, `theme()`
+- [Preflight](https://tailwindcss.com/docs/preflight): Base styles reset applied by default
+
+## Layout
+
+- [Container](https://tailwindcss.com/docs/container): Set a max-width matching the current breakpoint
+- [Display](https://tailwindcss.com/docs/display): Block, inline, flex, grid, hidden, etc.
+- [Float](https://tailwindcss.com/docs/float): Float elements left or right
+- [Clear](https://tailwindcss.com/docs/clear): Clear floated elements
+- [Position](https://tailwindcss.com/docs/position): Static, fixed, absolute, relative, sticky
+- [Top / Right / Bottom / Left](https://tailwindcss.com/docs/top-right-bottom-left): Inset positioning with `inset-*`, `top-*`, `right-*`, `bottom-*`, `left-*`
+- [Overflow](https://tailwindcss.com/docs/overflow): Control overflow behavior
+- [Z-Index](https://tailwindcss.com/docs/z-index): Stack order with `z-*` utilities
+- [Aspect Ratio](https://tailwindcss.com/docs/aspect-ratio): Fixed aspect ratio boxes with `aspect-*`
+- [Columns](https://tailwindcss.com/docs/columns): Multi-column layout
+- [Object Fit](https://tailwindcss.com/docs/object-fit): How replaced elements fit their container
+- [Object Position](https://tailwindcss.com/docs/object-position): Position of replaced element content
+- [Visibility](https://tailwindcss.com/docs/visibility): Show or hide elements while preserving space
+- [Isolation](https://tailwindcss.com/docs/isolation): Create new stacking contexts
+
+## Flexbox & Grid
+
+- [Flex](https://tailwindcss.com/docs/flex): Shorthand flex utilities (`flex-1`, `flex-auto`, `flex-none`)
+- [Flex Direction](https://tailwindcss.com/docs/flex-direction): `flex-row`, `flex-col`, `flex-row-reverse`, `flex-col-reverse`
+- [Flex Wrap](https://tailwindcss.com/docs/flex-wrap): `flex-wrap`, `flex-nowrap`, `flex-wrap-reverse`
+- [Flex Grow](https://tailwindcss.com/docs/flex-grow): `grow`, `grow-0`
+- [Flex Shrink](https://tailwindcss.com/docs/flex-shrink): `shrink`, `shrink-0`
+- [Flex Basis](https://tailwindcss.com/docs/flex-basis): Initial size of flex items with `basis-*`
+- [Order](https://tailwindcss.com/docs/order): Reorder flex/grid items with `order-*`
+- [Grid Template Columns](https://tailwindcss.com/docs/grid-template-columns): `grid-cols-*`
+- [Grid Template Rows](https://tailwindcss.com/docs/grid-template-rows): `grid-rows-*`
+- [Grid Column](https://tailwindcss.com/docs/grid-column): `col-span-*`, `col-start-*`, `col-end-*`
+- [Grid Row](https://tailwindcss.com/docs/grid-row): `row-span-*`, `row-start-*`, `row-end-*`
+- [Grid Auto Flow](https://tailwindcss.com/docs/grid-auto-flow): `grid-flow-row`, `grid-flow-col`, `grid-flow-dense`
+- [Grid Auto Columns](https://tailwindcss.com/docs/grid-auto-columns): `auto-cols-*`
+- [Grid Auto Rows](https://tailwindcss.com/docs/grid-auto-rows): `auto-rows-*`
+- [Gap](https://tailwindcss.com/docs/gap): `gap-*`, `gap-x-*`, `gap-y-*`
+- [Justify Content](https://tailwindcss.com/docs/justify-content): `justify-start`, `justify-center`, `justify-end`, `justify-between`, `justify-around`, `justify-evenly`
+- [Justify Items](https://tailwindcss.com/docs/justify-items): `justify-items-start`, `justify-items-center`, `justify-items-end`, `justify-items-stretch`
+- [Justify Self](https://tailwindcss.com/docs/justify-self): `justify-self-*`
+- [Align Content](https://tailwindcss.com/docs/align-content): `content-center`, `content-start`, `content-end`, `content-between`, `content-around`
+- [Align Items](https://tailwindcss.com/docs/align-items): `items-start`, `items-center`, `items-end`, `items-baseline`, `items-stretch`
+- [Align Self](https://tailwindcss.com/docs/align-self): `self-*`
+- [Place Content](https://tailwindcss.com/docs/place-content): `place-content-*`
+- [Place Items](https://tailwindcss.com/docs/place-items): `place-items-*`
+- [Place Self](https://tailwindcss.com/docs/place-self): `place-self-*`
+
+## Spacing
+
+- [Padding](https://tailwindcss.com/docs/padding): `p-*`, `px-*`, `py-*`, `pt-*`, `pr-*`, `pb-*`, `pl-*`, `ps-*`, `pe-*`
+- [Margin](https://tailwindcss.com/docs/margin): `m-*`, `mx-*`, `my-*`, `mt-*`, `mr-*`, `mb-*`, `ml-*`, `ms-*`, `me-*`
+- [Space Between](https://tailwindcss.com/docs/margin): `space-x-*`, `space-y-*` for spacing between children
+
+## Sizing
+
+- [Width](https://tailwindcss.com/docs/width): `w-*`, `w-full`, `w-screen`, `w-svw`, `w-dvw`, `w-fit`, `w-min`, `w-max`
+- [Min Width](https://tailwindcss.com/docs/min-width): `min-w-*`
+- [Max Width](https://tailwindcss.com/docs/max-width): `max-w-*`
+- [Height](https://tailwindcss.com/docs/height): `h-*`, `h-full`, `h-screen`, `h-svh`, `h-dvh`, `h-fit`, `h-min`, `h-max`
+- [Min Height](https://tailwindcss.com/docs/min-height): `min-h-*`
+- [Max Height](https://tailwindcss.com/docs/max-height): `max-h-*`
+- [Size](https://tailwindcss.com/docs/width): `size-*` sets both width and height simultaneously
+
+## Typography
+
+- [Font Family](https://tailwindcss.com/docs/font-family): `font-sans`, `font-serif`, `font-mono`
+- [Font Size](https://tailwindcss.com/docs/font-size): `text-xs`, `text-sm`, `text-base`, `text-lg`, `text-xl`, `text-2xl` through `text-9xl`
+- [Font Weight](https://tailwindcss.com/docs/font-weight): `font-thin`, `font-light`, `font-normal`, `font-medium`, `font-semibold`, `font-bold`, `font-extrabold`, `font-black`
+- [Font Style](https://tailwindcss.com/docs/font-style): `italic`, `not-italic`
+- [Line Height](https://tailwindcss.com/docs/line-height): `leading-*` — `leading-none`, `leading-tight`, `leading-snug`, `leading-normal`, `leading-relaxed`, `leading-loose`
+- [Letter Spacing](https://tailwindcss.com/docs/letter-spacing): `tracking-tight`, `tracking-normal`, `tracking-wide`, `tracking-wider`, `tracking-widest`
+- [Text Align](https://tailwindcss.com/docs/text-align): `text-left`, `text-center`, `text-right`, `text-justify`, `text-start`, `text-end`
+- [Text Color](https://tailwindcss.com/docs/color): `text-*` with any color scale value
+- [Text Decoration](https://tailwindcss.com/docs/text-decoration-line): `underline`, `overline`, `line-through`, `no-underline`
+- [Text Transform](https://tailwindcss.com/docs/text-transform): `uppercase`, `lowercase`, `capitalize`, `normal-case`
+- [Text Overflow](https://tailwindcss.com/docs/text-overflow): `truncate`, `text-ellipsis`, `text-clip`
+- [Text Wrap](https://tailwindcss.com/docs/text-wrap): `text-wrap`, `text-nowrap`, `text-balance`, `text-pretty`
+- [Text Shadow](https://tailwindcss.com/docs/text-shadow): `text-shadow-*` (new in v4)
+- [Line Clamp](https://tailwindcss.com/docs/line-clamp): `line-clamp-*` to truncate multi-line text
+- [Vertical Align](https://tailwindcss.com/docs/vertical-align): `align-baseline`, `align-top`, `align-middle`, `align-bottom`
+- [Whitespace](https://tailwindcss.com/docs/white-space): `whitespace-normal`, `whitespace-nowrap`, `whitespace-pre`, `whitespace-pre-line`, `whitespace-pre-wrap`
+- [Word Break](https://tailwindcss.com/docs/word-break): `break-normal`, `break-words`, `break-all`, `break-keep`
+- [Overflow Wrap](https://tailwindcss.com/docs/overflow-wrap): `wrap-break-word`, `wrap-normal`, `wrap-anywhere`
+- [Hyphens](https://tailwindcss.com/docs/hyphens): `hyphens-none`, `hyphens-manual`, `hyphens-auto`
+- [List Style Type](https://tailwindcss.com/docs/list-style-type): `list-none`, `list-disc`, `list-decimal`
+- [List Style Position](https://tailwindcss.com/docs/list-style-position): `list-inside`, `list-outside`
+- [List Style Image](https://tailwindcss.com/docs/list-style-image): `list-image-none`, `list-image-[url(...)]`
+
+## Backgrounds
+
+- [Background Color](https://tailwindcss.com/docs/background-color): `bg-*` with any color scale value
+- [Background Image](https://tailwindcss.com/docs/background-image): `bg-gradient-to-*`, `bg-none`, `bg-[url(...)]`
+- [Background Size](https://tailwindcss.com/docs/background-size): `bg-auto`, `bg-cover`, `bg-contain`
+- [Background Position](https://tailwindcss.com/docs/background-position): `bg-center`, `bg-top`, `bg-bottom`, `bg-left`, `bg-right`
+- [Background Repeat](https://tailwindcss.com/docs/background-repeat): `bg-repeat`, `bg-no-repeat`, `bg-repeat-x`, `bg-repeat-y`
+- [Background Attachment](https://tailwindcss.com/docs/background-attachment): `bg-fixed`, `bg-local`, `bg-scroll`
+- [Background Clip](https://tailwindcss.com/docs/background-clip): `bg-clip-border`, `bg-clip-padding`, `bg-clip-content`, `bg-clip-text`
+- [Background Origin](https://tailwindcss.com/docs/background-origin): `bg-origin-border`, `bg-origin-padding`, `bg-origin-content`
+- [Gradient Color Stops](https://tailwindcss.com/docs/background-image): `from-*`, `via-*`, `to-*`
+
+## Borders
+
+- [Border Width](https://tailwindcss.com/docs/border-width): `border`, `border-*`, `border-x-*`, `border-y-*`, `border-t-*`, `border-r-*`, `border-b-*`, `border-l-*`
+- [Border Color](https://tailwindcss.com/docs/border-color): `border-*` with any color scale value
+- [Border Style](https://tailwindcss.com/docs/border-style): `border-solid`, `border-dashed`, `border-dotted`, `border-double`, `border-hidden`, `border-none`
+- [Border Radius](https://tailwindcss.com/docs/border-radius): `rounded`, `rounded-*`, `rounded-t-*`, `rounded-r-*`, `rounded-b-*`, `rounded-l-*`, `rounded-tl-*`, etc.
+- [Divide Width](https://tailwindcss.com/docs/border-width): `divide-x-*`, `divide-y-*` for borders between children
+- [Outline Width](https://tailwindcss.com/docs/outline-width): `outline-*`
+- [Outline Color](https://tailwindcss.com/docs/outline-color): `outline-*` with color values
+- [Outline Style](https://tailwindcss.com/docs/outline-style): `outline`, `outline-dashed`, `outline-dotted`, `outline-double`, `outline-none`
+- [Outline Offset](https://tailwindcss.com/docs/outline-offset): `outline-offset-*`
+- [Ring](https://tailwindcss.com/docs/box-shadow): `ring-*`, `ring-inset`, `ring-*` color
+
+## Effects
+
+- [Box Shadow](https://tailwindcss.com/docs/box-shadow): `shadow-sm`, `shadow`, `shadow-md`, `shadow-lg`, `shadow-xl`, `shadow-2xl`, `shadow-inner`, `shadow-none`
+- [Opacity](https://tailwindcss.com/docs/opacity): `opacity-*`
+- [Mix Blend Mode](https://tailwindcss.com/docs/mix-blend-mode): `mix-blend-*`
+- [Background Blend Mode](https://tailwindcss.com/docs/background-blend-mode): `bg-blend-*`
+
+## Filters
+
+- [Blur](https://tailwindcss.com/docs/filter-blur): `blur-*`, `blur-none`, `blur-sm`, `blur-md`, `blur-lg`, `blur-xl`, `blur-2xl`, `blur-3xl`
+- [Brightness](https://tailwindcss.com/docs/filter-brightness): `brightness-*`
+- [Contrast](https://tailwindcss.com/docs/filter-contrast): `contrast-*`
+- [Drop Shadow](https://tailwindcss.com/docs/filter-drop-shadow): `drop-shadow-*`
+- [Grayscale](https://tailwindcss.com/docs/filter-grayscale): `grayscale`, `grayscale-0`
+- [Hue Rotate](https://tailwindcss.com/docs/filter-hue-rotate): `hue-rotate-*`
+- [Invert](https://tailwindcss.com/docs/filter-invert): `invert`, `invert-0`
+- [Saturate](https://tailwindcss.com/docs/filter-saturate): `saturate-*`
+- [Sepia](https://tailwindcss.com/docs/filter-sepia): `sepia`, `sepia-0`
+- [Backdrop Blur](https://tailwindcss.com/docs/backdrop-filter-blur): `backdrop-blur-*`
+- [Backdrop Brightness](https://tailwindcss.com/docs/backdrop-filter-brightness): `backdrop-brightness-*`
+- [Backdrop Contrast](https://tailwindcss.com/docs/backdrop-filter-contrast): `backdrop-contrast-*`
+- [Backdrop Grayscale](https://tailwindcss.com/docs/backdrop-filter-grayscale): `backdrop-grayscale`
+- [Backdrop Hue Rotate](https://tailwindcss.com/docs/backdrop-filter-hue-rotate): `backdrop-hue-rotate-*`
+- [Backdrop Invert](https://tailwindcss.com/docs/backdrop-filter-invert): `backdrop-invert`
+- [Backdrop Opacity](https://tailwindcss.com/docs/backdrop-filter-opacity): `backdrop-opacity-*`
+- [Backdrop Saturate](https://tailwindcss.com/docs/backdrop-filter-saturate): `backdrop-saturate-*`
+- [Backdrop Sepia](https://tailwindcss.com/docs/backdrop-filter-sepia): `backdrop-sepia`
+
+## Transforms
+
+- [Scale](https://tailwindcss.com/docs/scale): `scale-*`, `scale-x-*`, `scale-y-*`
+- [Rotate](https://tailwindcss.com/docs/rotate): `rotate-*`
+- [Translate](https://tailwindcss.com/docs/translate): `translate-x-*`, `translate-y-*`
+- [Skew](https://tailwindcss.com/docs/skew): `skew-x-*`, `skew-y-*`
+- [Transform Origin](https://tailwindcss.com/docs/transform-origin): `origin-*`
+- [Transform Style](https://tailwindcss.com/docs/transform-style): `transform-flat`, `transform-3d`
+- [Perspective](https://tailwindcss.com/docs/perspective): `perspective-*`
+- [Perspective Origin](https://tailwindcss.com/docs/perspective-origin): `perspective-origin-*`
+- [Transform](https://tailwindcss.com/docs/transform): `transform`, `transform-gpu`, `transform-none` — enable hardware acceleration
+
+## Transitions & Animation
+
+- [Transition Property](https://tailwindcss.com/docs/transition-property): `transition`, `transition-all`, `transition-colors`, `transition-opacity`, `transition-shadow`, `transition-transform`, `transition-none`
+- [Transition Duration](https://tailwindcss.com/docs/transition-duration): `duration-*`
+- [Transition Timing](https://tailwindcss.com/docs/transition-timing-function): `ease-linear`, `ease-in`, `ease-out`, `ease-in-out`
+- [Transition Delay](https://tailwindcss.com/docs/transition-delay): `delay-*`
+- [Transition Behavior](https://tailwindcss.com/docs/transition-behavior): `transition-discrete`, `transition-normal`
+- [Animation](https://tailwindcss.com/docs/animation): `animate-spin`, `animate-ping`, `animate-pulse`, `animate-bounce`, `animate-none`
+
+## Interactivity
+
+- [Appearance](https://tailwindcss.com/docs/appearance): `appearance-none`, `appearance-auto`
+- [Cursor](https://tailwindcss.com/docs/cursor): `cursor-auto`, `cursor-default`, `cursor-pointer`, `cursor-wait`, `cursor-text`, `cursor-move`, `cursor-not-allowed`, etc.
+- [Caret Color](https://tailwindcss.com/docs/caret-color): `caret-*`
+- [Pointer Events](https://tailwindcss.com/docs/pointer-events): `pointer-events-none`, `pointer-events-auto`
+- [Resize](https://tailwindcss.com/docs/resize): `resize-none`, `resize`, `resize-x`, `resize-y`
+- [Scroll Behavior](https://tailwindcss.com/docs/scroll-behavior): `scroll-auto`, `scroll-smooth`
+- [Scroll Snap Type](https://tailwindcss.com/docs/scroll-snap-type): `snap-none`, `snap-x`, `snap-y`, `snap-both`, `snap-mandatory`, `snap-proximity`
+- [Scroll Snap Align](https://tailwindcss.com/docs/scroll-snap-align): `snap-start`, `snap-end`, `snap-center`, `snap-align-none`
+- [Touch Action](https://tailwindcss.com/docs/touch-action): `touch-auto`, `touch-none`, `touch-pan-x`, `touch-pan-y`
+- [User Select](https://tailwindcss.com/docs/user-select): `select-none`, `select-text`, `select-all`, `select-auto`
+- [Field Sizing](https://tailwindcss.com/docs/field-sizing): `field-sizing-fixed`, `field-sizing-content`
+
+## SVG
+
+- [Fill](https://tailwindcss.com/docs/fill): `fill-*` — fill color for SVG elements
+- [Stroke](https://tailwindcss.com/docs/stroke): `stroke-*` — stroke color for SVG elements
+- [Stroke Width](https://tailwindcss.com/docs/stroke-width): `stroke-*` — stroke width for SVG elements
+
+## Accessibility
+
+- [Screen Readers](https://tailwindcss.com/docs/hover-focus-and-other-states): `sr-only`, `not-sr-only` — hide/show elements for screen readers only
+- [Forced Color Adjust](https://tailwindcss.com/docs/forced-color-adjust): `forced-color-adjust-auto`, `forced-color-adjust-none`
+- [Color Scheme](https://tailwindcss.com/docs/color-scheme): `scheme-normal`, `scheme-light`, `scheme-dark`
+- [Accent Color](https://tailwindcss.com/docs/accent-color): `accent-*` — styling form controls
+
+## Tables
+
+- [Table Layout](https://tailwindcss.com/docs/table-layout): `table-auto`, `table-fixed`
+- [Border Collapse](https://tailwindcss.com/docs/border-collapse): `border-collapse`, `border-separate`
+- [Border Spacing](https://tailwindcss.com/docs/border-spacing): `border-spacing-*`
+- [Caption Side](https://tailwindcss.com/docs/caption-side): `caption-top`, `caption-bottom`
+
+## Miscellaneous
+
+- [Box Sizing](https://tailwindcss.com/docs/box-sizing): `box-border`, `box-content`
+- [Box Decoration Break](https://tailwindcss.com/docs/box-decoration-break): `box-decoration-clone`, `box-decoration-slice`
+- [Content](https://tailwindcss.com/docs/content): `content-none`, `content-[...]`
+- [Break After](https://tailwindcss.com/docs/break-after): `break-after-*`
+- [Break Before](https://tailwindcss.com/docs/break-before): `break-before-*`
+- [Break Inside](https://tailwindcss.com/docs/break-inside): `break-inside-avoid`, `break-inside-auto`
+- [Overscroll Behavior](https://tailwindcss.com/docs/overscroll-behavior): `overscroll-auto`, `overscroll-contain`, `overscroll-none`
+- [Backface Visibility](https://tailwindcss.com/docs/backface-visibility): `backface-visible`, `backface-hidden`
+- [Will Change](https://tailwindcss.com/docs/will-change): `will-change-auto`, `will-change-scroll`, `will-change-contents`, `will-change-transform`
+- [Font Smoothing](https://tailwindcss.com/docs/font-smoothing): `antialiased`, `subpixel-antialiased`
+- [Font Variant Numeric](https://tailwindcss.com/docs/font-variant-numeric): `normal-nums`, `ordinal`, `slashed-zero`, `lining-nums`, `oldstyle-nums`, etc.
+- [Font Feature Settings](https://tailwindcss.com/docs/font-feature-settings): `font-feature-settings-[...]`
+- [Font Stretch](https://tailwindcss.com/docs/font-stretch): `font-stretch-*`
+- [Text Indent](https://tailwindcss.com/docs/text-indent): `indent-*`
+- [Text Decoration Color](https://tailwindcss.com/docs/text-decoration-color): `decoration-*`
+- [Text Decoration Style](https://tailwindcss.com/docs/text-decoration-style): `decoration-solid`, `decoration-double`, `decoration-dotted`, `decoration-dashed`, `decoration-wavy`
+- [Text Decoration Thickness](https://tailwindcss.com/docs/text-decoration-thickness): `decoration-*`
+- [Text Underline Offset](https://tailwindcss.com/docs/text-underline-offset): `underline-offset-*`
+- [Mask Utilities](https://tailwindcss.com/docs/mask-image): `mask-image-*`, `mask-size-*`, `mask-position-*`, `mask-repeat-*`, `mask-clip-*`, `mask-origin-*`, `mask-composite-*`, `mask-mode-*`, `mask-type-*`
+
+## Optional
+
+- [Adding Custom Styles](https://tailwindcss.com/docs/adding-custom-styles): Write one-off custom styles and extend the design system
+- [Blog](https://tailwindcss.com/blog): Tailwind CSS blog with release notes and tutorials
+- [GitHub](https://github.com/tailwindlabs/tailwindcss): Tailwind CSS source code
+- [Tailwind UI](https://tailwindui.com): Official pre-built component library for Tailwind CSS
+- [Headless UI](https://headlessui.com): Unstyled accessible UI component library by Tailwind Labs
+- [Heroicons](https://heroicons.com): Beautiful hand-crafted SVG icons by Tailwind Labs
