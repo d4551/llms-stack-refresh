@@ -449,27 +449,44 @@ Use CSS variables to override component tokens globally:
 
 ---
 
-## EasyAuth -- Integration Layer
+## Better Auth -- Plugin System and Auth Integration
 
-**System name**: EasyAuth Integration (not a plugin framework)
+**System name**: Better Auth Plugin System
 
-**Primary API**: Session token validation in Elysia `beforeHandle` lifecycle hook
+**Primary API**: `betterAuth()` configuration with `plugins` array; session validation via `auth.api.getSession()` in Elysia `beforeHandle` lifecycle hook
 
 ### How it works
 
-EasyAuth is a managed authentication service, not a plugin system with extension hooks. Integrate EasyAuth by calling its API to validate session tokens, and use Elysia's lifecycle hooks to protect routes.
+Better Auth is a TypeScript authentication library that runs server-side. It provides an HTTP handler for all auth routes (sign-in, sign-up, OAuth callback, session, sign-out) and a typed API for session validation. Integrate with Elysia by mounting the handler and using `beforeHandle` hooks to protect routes.
 
 ### Key integration points
 
-**Session validation in Elysia:**
+**Mounting the auth handler in Elysia:**
 
 ```typescript
-app.get("/protected", ({ set, headers }) => {
-  // handler
+import { betterAuth } from "better-auth";
+import { prismaAdapter } from "better-auth/adapters/prisma";
+import { prisma } from "./prisma"; // your PrismaClient instance
+
+const auth = betterAuth({
+  database: prismaAdapter(prisma, { provider: "postgresql" }),
+  emailAndPassword: { enabled: true },
+  socialProviders: {
+    github: { clientId: process.env.GITHUB_CLIENT_ID!, clientSecret: process.env.GITHUB_CLIENT_SECRET! },
+  },
+});
+
+app.all("/api/auth/*", ({ request }) => auth.handler(request));
+```
+
+**Session validation in Elysia `beforeHandle`:**
+
+```typescript
+app.get("/protected", ({ request }) => {
+  return "Protected content";
 }, {
-  beforeHandle: async ({ set, headers }) => {
-    const token = headers["x-easyauth-token"];
-    const session = await validateEasyAuthToken(token);
+  beforeHandle: async ({ request, set }) => {
+    const session = await auth.api.getSession({ headers: request.headers });
     if (!session) {
       set.status = 401;
       return "Unauthorized";
@@ -483,8 +500,9 @@ app.get("/protected", ({ set, headers }) => {
 When an htmx request is made by an unauthenticated user, return an `HX-Redirect` response header instead of a 401 status. htmx will redirect the browser to the login URL.
 
 ```typescript
-beforeHandle: async ({ set, headers, request }) => {
-  if (!isAuthenticated) {
+beforeHandle: async ({ request, set }) => {
+  const session = await auth.api.getSession({ headers: request.headers });
+  if (!session) {
     if (request.headers.get("hx-request")) {
       set.headers["HX-Redirect"] = "/login";
       set.status = 200;
@@ -496,26 +514,32 @@ beforeHandle: async ({ set, headers, request }) => {
 }
 ```
 
-**OAuth provider configuration**: Configure OAuth providers (GitHub, Google, etc.) via the EasyAuth dashboard. No code change is required to switch providers.
+### Plugin system
 
-### Supported customizations
+Pass plugins to the `plugins` array in `betterAuth()`:
 
-- Choose which OAuth providers to enable (dashboard configuration).
-- Customize session token validation logic in the `beforeHandle` hook.
-- Redirect unauthenticated htmx requests using the `HX-Redirect` header.
-- Store additional user data by extending the EasyAuth user profile via the dashboard.
+- `organization()` — multi-tenant organization support with roles and permissions
+- `twoFactor()` — TOTP-based two-factor authentication
+- `passkey()` — WebAuthn passkey authentication
+- `magicLink()` — passwordless sign-in via email magic link
+- `admin()` — admin panel and user management APIs
+- `username()` — add a username field to user accounts
+- `bearer()` — bearer token session strategy for API clients
+
+Each plugin may extend the database schema. Run `bunx better-auth generate` to update the Prisma schema file with the required tables, then run `bunx prisma migrate dev` to apply the migration.
 
 ### Common patterns
 
-- Create a reusable `authGuard` Elysia plugin that wraps the `beforeHandle` validation logic.
-- Use Prisma to store extended user data linked to the EasyAuth user ID.
+- Create a reusable `authGuard` Elysia plugin that wraps the `beforeHandle` session validation logic.
+- Use Prisma to store extended user data linked to the Better Auth user ID.
+- Use the `organization()` plugin for multi-tenant applications.
 
 ### Common anti-patterns
 
-- Do not store EasyAuth session tokens in `localStorage`; use `HttpOnly` cookies.
-- Do not validate tokens on the client side; always validate server-side in `beforeHandle`.
+- Do not store Better Auth session tokens in `localStorage`; use `HttpOnly` cookies.
+- Do not validate sessions on the client side; always call `auth.api.getSession()` server-side in `beforeHandle`.
 
 ### References
 
-- `easy-auth/llms.txt` -- see Integration Patterns section
-- Upstream docs: https://easyauth.io/docs/
+- `better-auth/llms.txt` -- see Integration Patterns and Plugins sections
+- Upstream docs: https://better-auth.com/docs

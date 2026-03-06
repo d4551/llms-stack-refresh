@@ -27,7 +27,7 @@ llms-stack-refresh/
 ├── CODEX.md             # OpenAI Codex auto-discovery file
 ├── bun/llms.txt         # Official Bun docs index
 ├── daisyui/llms.txt     # Official daisyUI docs index
-├── easy-auth/llms.txt   # Curated EasyAuth docs index (no official file exists)
+├── better-auth/llms.txt # Curated Better Auth docs index (no official file exists)
 ├── elysiajs/llms.txt    # Curated ElysiaJS docs index
 ├── htmx/llms.txt        # Curated htmx docs index
 ├── prisma/llms.txt      # Curated Prisma docs index
@@ -106,10 +106,10 @@ llms-stack-refresh/
 - Include theme configuration, custom theme generation, and CSS plugin configuration.
 - Component usage rules and install/config guidance must be present.
 
-#### EasyAuth (`easy-auth/llms.txt`)
-- Document EasyAuth primarily as an auth integration layer, not a full framework.
-- Do not overstate capabilities beyond what official docs support.
-- Include integration patterns showing how EasyAuth fits with Bun/Elysia/Prisma/htmx.
+#### Better Auth (`better-auth/llms.txt`)
+- Document Better Auth as a TypeScript auth library with a real plugin system.
+- Cover the `betterAuth()` server setup, `createAuthClient()` browser client, and `auth.api.getSession()` for session validation.
+- Include integration patterns showing how Better Auth fits with Bun/Elysia/Prisma/htmx.
 
 ## What AI Agents Should NOT Do
 

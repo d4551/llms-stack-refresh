@@ -1,6 +1,6 @@
 # CLAUDE.md — Context for Anthropic Claude / Claude Code
 
-> Purpose: Curated `llms.txt` documentation index for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/EasyAuth stack. Optimised for AI agent context ingestion.
+> Purpose: Curated `llms.txt` documentation index for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/Better Auth stack. Optimised for AI agent context ingestion.
 
 ## Routing Directives
 
@@ -10,7 +10,7 @@
 - When asked about Prisma: consume `prisma/llms.txt`
 - When asked about Tailwind CSS: consume `tailwindcss/llms.txt`
 - When asked about daisyUI: consume `daisyui/llms.txt`
-- When asked about EasyAuth: consume `easy-auth/llms.txt`
+- When asked about Better Auth: consume `better-auth/llms.txt`
 - When asked about extending or customising any tool: consume `docs/EXTENSIONS.md`
 - When asked about IDE or AI tool setup: consume `docs/IDE-SETUP.md`
 - For file routing: consume `docs/INDEX.md`
@@ -21,7 +21,7 @@
 |------------|------|---------|
 | Bun | `bun/llms.txt` | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt` |
 | ElysiaJS | `elysiajs/llms.txt` | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt` |
-| EasyAuth | `easy-auth/llms.txt` | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt` |
+| Better Auth | `better-auth/llms.txt` | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt` |
 | htmx | `htmx/llms.txt` | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt` |
 | Prisma | `prisma/llms.txt` | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt` |
 | Tailwind CSS | `tailwindcss/llms.txt` | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt` |
@@ -32,7 +32,7 @@
 | Layer | Tool | Role |
 |-------|------|------|
 | Runtime / backend | Bun + Elysia | Fast HTTP server with E2E type safety |
-| Auth | EasyAuth | Managed OAuth / session layer |
+| Auth | Better Auth | TypeScript auth library with OAuth, sessions, and plugins |
 | Hypermedia UI | htmx | Server-driven UI without a JS framework |
 | Data / ORM | Prisma | Type-safe database access and migrations |
 | Styling | Tailwind CSS + daisyUI | Utility classes with pre-built components |
@@ -43,7 +43,7 @@
 - Use htmx attributes for interactivity. Do not add a JavaScript framework.
 - Use Prisma for database access.
 - Use Tailwind CSS and daisyUI for styling.
-- Use EasyAuth for authentication.
+- Use Better Auth for authentication.
 
 ## File Format Constraints
 

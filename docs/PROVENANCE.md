@@ -23,7 +23,7 @@ No official `llms.txt` exists, but the project maintains an open-source document
 ### Tier 3 — Official Documentation Website
 No official `llms.txt` and no open-source docs repo. The project maintains an official documentation website.
 
-- **Action**: Curate from the documentation website. Mark as "Curated — [docs URL]". This applies to `easy-auth/llms.txt`.
+- **Action**: Curate from the documentation website. Mark as "Curated — [docs URL]". This applies to `better-auth/llms.txt`.
 - **Content rules**: Same as Tier 2. Be especially careful not to overstate capabilities.
 
 ## What Is Not Acceptable
