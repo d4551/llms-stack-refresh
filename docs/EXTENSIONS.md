@@ -1,10 +1,10 @@
 # Extension and Plugin Systems
 
-Canonical deep-dive reference for the plugin, extension, and customization systems of every technology in this stack.
+Consume this file when generating or reviewing code that customises any tool in the stack.
 
-## Why Extension Systems Matter for LLM-Assisted Development
+## Extension Systems
 
-Extension systems are the primary mechanism for adapting each tool to a specific project's needs. LLM coding assistants must understand these systems to generate correct, idiomatic code. This document lists the exact API names, hook names, and configuration points for each tool. Use this file as a reference when generating or reviewing code that customizes any tool in the stack.
+Extension systems are the primary mechanism for adapting each tool to a specific project's needs. This document lists the exact API names, hook names, and configuration points for each tool.
 
 ## Bun -- Plugin API
 

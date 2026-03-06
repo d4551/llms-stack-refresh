@@ -1,6 +1,6 @@
 # IDE and AI Coding Tool Setup
 
-Step-by-step instructions for using this repository's `llms.txt` files with every major AI coding tool and IDE. Each section covers how to include documentation context so the AI assistant understands the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/EasyAuth stack.
+Setup directives for using this repository's `llms.txt` files with every major AI coding tool and IDE. Consume the relevant section to configure context for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/EasyAuth stack.
 
 All raw file URLs follow this pattern:
 
@@ -26,9 +26,7 @@ Full URL table:
 
 ### Using `#fetch` in Copilot Chat
 
-1. Open the Copilot Chat panel in VS Code.
-2. In the chat input, type `#fetch` followed by a raw URL.
-3. Copilot fetches the URL and includes the content as context for your prompt.
+Type `#fetch` followed by a raw URL in the Copilot Chat input. Copilot fetches the URL and includes the content as context.
 
 Example prompt:
 
@@ -47,8 +45,7 @@ Show me how to send an htmx partial response from an Elysia route.
 
 ### Auto-including context with `copilot-instructions.md`
 
-1. Create `.github/copilot-instructions.md` in your project root.
-2. Add a section listing the raw URLs of the `llms.txt` files you want Copilot to always reference.
+Create `.github/copilot-instructions.md` in your project root. Add a section listing the raw URLs. Copilot reads this file automatically on every chat session.
 
 Example `.github/copilot-instructions.md`:
 
@@ -69,8 +66,6 @@ Always use the Bun runtime (not Node.js) and Elysia for HTTP handling.
 Use htmx attributes for client-side interactivity instead of a JavaScript framework.
 ```
 
-Copilot reads `copilot-instructions.md` automatically on every chat session in that workspace.
-
 ### Example prompts
 
 ```
@@ -89,9 +84,7 @@ Write a Bun plugin that loads YAML files as JavaScript objects.
 
 ### Using Copilot Chat in JetBrains
 
-1. Install the GitHub Copilot plugin from JetBrains Marketplace.
-2. Open the Copilot Chat tool window (View > Tool Windows > GitHub Copilot Chat).
-3. Paste a raw URL directly into the chat input. Copilot will fetch the URL and use the content as context.
+Install the GitHub Copilot plugin from JetBrains Marketplace. Paste a raw URL directly into the Copilot Chat input; Copilot fetches the URL and uses the content as context.
 
 Example:
 
@@ -106,9 +99,7 @@ Now create an Elysia route that validates JWT tokens using the @elysiajs/jwt plu
 - The `copilot-instructions.md` file is honoured by Copilot in JetBrains from Copilot plugin version 1.5 and later.
 - File attachment via the chat UI is not supported; use URL references instead.
 
-### Recommended approach
-
-Use the `copilot-instructions.md` file (same as VS Code) for persistent context. Place the file at `.github/copilot-instructions.md` in the project root.
+Use the `copilot-instructions.md` file (same as VS Code) for persistent context at `.github/copilot-instructions.md`.
 
 ---
 
@@ -116,10 +107,7 @@ Use the `copilot-instructions.md` file (same as VS Code) for persistent context.
 
 ### Using `.cursor/rules/` directory
 
-The `.cursor/rules/` directory is the current recommended approach for persistent rules and context. The older `.cursorrules` file is deprecated.
-
-1. Create the directory `.cursor/rules/` in your project root.
-2. Create a file with a `.mdc` extension (Markdown with YAML frontmatter).
+The `.cursor/rules/` directory is the recommended approach for persistent rules and context (`.cursorrules` is deprecated). Create a `.mdc` file (Markdown with YAML frontmatter).
 
 Example `.cursor/rules/llms-stack.mdc`:
 
@@ -157,10 +145,7 @@ When generating or reviewing code for this project, fetch and read the relevant 
 
 ### Using `@docs` in Cursor Chat
 
-1. Open Cursor Chat (Cmd+L or Ctrl+L).
-2. Type `@docs` to open the documentation picker.
-3. Add a documentation source by URL if not already added.
-4. Reference the documentation source by name in your prompt.
+Type `@docs` in Cursor Chat to open the documentation picker. Add a documentation source by URL if not already added.
 
 ### Using `@web` with raw GitHub URLs
 
@@ -177,11 +162,7 @@ How do I register a Bun plugin for loading SVG files?
 
 ### Configuring Windsurf rules
 
-1. Open the Windsurf settings panel.
-2. Navigate to the Rules or Memory section.
-3. Add a rule that lists the raw URLs of the documentation files.
-
-Example rule text:
+Add a rule in the Windsurf settings (Rules or Memory section) listing the raw documentation URLs:
 
 ```
 When working on this project, reference the following documentation files for context:
@@ -196,9 +177,7 @@ When working on this project, reference the following documentation files for co
 
 ### Using Cascade with documentation context
 
-1. Open Cascade (Windsurf's agentic chat panel).
-2. Paste a raw URL directly into the chat input. Cascade fetches the file.
-3. Proceed with your prompt after the file is loaded.
+In Cascade (Windsurf's agentic chat panel), paste a raw URL directly into the chat input. Cascade fetches the file.
 
 Example:
 
@@ -209,9 +188,7 @@ Create an Elysia application with JWT authentication and a protected route.
 
 ### Attaching files in Windsurf Chat
 
-1. Click the attachment icon in the Windsurf Chat input.
-2. Select a locally cloned `llms.txt` file from the filesystem.
-3. The file contents are included as context for the current chat session.
+Click the attachment icon in the Windsurf Chat input and select a locally cloned `llms.txt` file. The file contents are included as context for the current chat session.
 
 ---
 
@@ -219,8 +196,7 @@ Create an Elysia application with JWT authentication and a protected route.
 
 ### Creating a `.clinerules` file
 
-1. Create `.clinerules` at the project root.
-2. Add documentation instructions in plain text or Markdown.
+Create `.clinerules` at the project root with documentation instructions. Cline reads this file automatically when a task starts.
 
 Example `.clinerules`:
 
@@ -260,9 +236,7 @@ Create a Prisma schema for a blog application with users and posts.
 
 ### Configuring custom instructions
 
-1. Open VS Code settings.
-2. Search for "Cline: Custom Instructions".
-3. Add the documentation URLs and stack conventions as persistent instructions.
+In VS Code settings, search for "Cline: Custom Instructions". Add the documentation URLs and stack conventions as persistent instructions.
 
 ---
 
@@ -280,15 +254,11 @@ Now explain how to build a custom htmx extension that adds a loading spinner dur
 
 ### Attaching downloaded files
 
-1. Download the `llms.txt` file to your local machine.
-2. Attach the file using the attachment button in claude.ai.
-3. Reference the file in your prompt.
+Download the `llms.txt` file and attach it using the attachment button in claude.ai.
 
 ### Using Claude Projects
 
-1. Create a new Project in claude.ai.
-2. Upload `llms.txt` files to the Project's knowledge base.
-3. All conversations in the Project will have access to the uploaded files.
+Upload `llms.txt` files to a Project's knowledge base. All conversations in the Project will have access to the uploaded files.
 
 Recommended files to upload for this stack:
 
@@ -335,9 +305,7 @@ Note: URL browsing availability depends on the ChatGPT model and configuration.
 
 ### Using Custom GPTs with uploaded knowledge files
 
-1. Open the ChatGPT GPT editor (explore.openai.com/gpts/editor).
-2. In the "Knowledge" section, upload one or more `llms.txt` files.
-3. Set instructions to reference the uploaded files when answering stack-related questions.
+In the ChatGPT GPT editor, upload `llms.txt` files in the "Knowledge" section. Set instructions to reference the uploaded files when answering stack-related questions.
 
 Example GPT instructions:
 
@@ -349,9 +317,7 @@ When users ask about any of these technologies, refer to the uploaded documentat
 
 ### Using Code Interpreter with attached files
 
-1. Enable the Code Interpreter tool in a ChatGPT conversation.
-2. Attach a `llms.txt` file using the attachment button.
-3. ChatGPT can read the file content and use it in its response.
+Enable the Code Interpreter tool and attach a `llms.txt` file using the attachment button. ChatGPT can read the file content and use it in its response.
 
 ---
 
@@ -408,8 +374,7 @@ aider --read elysiajs/llms.txt src/app.ts
 
 ### Configuring `.continue/config.json`
 
-1. Create or edit `.continue/config.json` in your project root.
-2. Add a `contextProviders` entry with a `url` provider listing the raw URLs.
+Create or edit `.continue/config.json` in your project root. Add a `contextProviders` entry with a `url` provider listing the raw URLs.
 
 Example `.continue/config.json`:
 
@@ -437,9 +402,7 @@ Example `.continue/config.json`:
 
 ### Using `@docs` context provider
 
-1. In Continue Chat, type `@docs` to open the documentation picker.
-2. Select a URL context provider you have configured.
-3. The documentation is included as context for the current prompt.
+In Continue Chat, type `@docs` to open the documentation picker and select a configured URL context provider.
 
 ### Setting up custom slash commands
 
@@ -463,10 +426,7 @@ Add a custom slash command in `.continue/config.json` that references the stack 
 
 ### Using the `/file` command
 
-1. Clone this repository locally.
-2. Open your project in Zed.
-3. Open the AI assistant panel (Cmd+? or Ctrl+?).
-4. Type `/file` followed by the path to a local `llms.txt` file.
+Clone this repository locally. In the Zed AI assistant panel, type `/file` followed by the path to a local `llms.txt` file.
 
 Example:
 
@@ -477,11 +437,9 @@ Explain how to use the htmx response-targets extension.
 
 ### Configuring Zed assistant context
 
-1. Open Zed settings (Cmd+, or Ctrl+,).
-2. Navigate to the `assistant` section.
-3. Add a `default_context` or similar setting pointing to local documentation files.
+In Zed settings, navigate to the `assistant` section. Add a `default_context` or similar setting pointing to local documentation files.
 
-Note: Zed's assistant configuration evolves rapidly. Check the Zed documentation at https://zed.dev/docs/assistant for the latest approach.
+Note: Zed's assistant configuration evolves rapidly. Check https://zed.dev/docs/assistant for the latest approach.
 
 ---
 
