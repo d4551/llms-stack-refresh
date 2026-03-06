@@ -1,0 +1,138 @@
+# htmx
+
+> htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext.
+
+htmx extends HTML with attributes like `hx-get`, `hx-post`, `hx-trigger`, and `hx-target` to make AJAX requests. Install via CDN: `<script src="https://unpkg.com/htmx.org@2"></script>` or npm: `npm install htmx.org`.
+
+## Documentation
+
+- [Introduction](https://htmx.org/docs/): Full htmx documentation — attributes, events, configuration, server-side examples
+- [Reference](https://htmx.org/reference/): Complete reference for all attributes, headers, events, CSS classes, and JavaScript API
+- [Attributes](https://htmx.org/reference/#attributes): All `hx-*` attribute documentation
+- [Events](https://htmx.org/events/): htmx event system — all fired events and how to handle them
+- [JavaScript API](https://htmx.org/api/): `htmx.ajax()`, `htmx.find()`, `htmx.findAll()`, `htmx.trigger()`, `htmx.process()`, `htmx.logAll()` and more
+- [Migration Guide (htmx 1.x to 2.x)](https://htmx.org/migration-guide-htmx-1/): Breaking changes and migration steps from htmx 1 to 2
+- [Quirks](https://htmx.org/quirks/): Known edge cases and unexpected behaviors
+
+## Core Attributes
+
+- [hx-get](https://htmx.org/attributes/hx-get/): Issue a `GET` to the specified URL on trigger
+- [hx-post](https://htmx.org/attributes/hx-post/): Issue a `POST` to the specified URL on trigger
+- [hx-put](https://htmx.org/attributes/hx-put/): Issue a `PUT` to the specified URL on trigger
+- [hx-patch](https://htmx.org/attributes/hx-patch/): Issue a `PATCH` to the specified URL on trigger
+- [hx-delete](https://htmx.org/attributes/hx-delete/): Issue a `DELETE` to the specified URL on trigger
+- [hx-trigger](https://htmx.org/attributes/hx-trigger/): Specify the event that triggers the request. Supports modifiers: `once`, `changed`, `delay:Xms`, `throttle:Xms`, `from:selector`, `target:selector`, `consume`, `queue:first|last|all|none`
+- [hx-target](https://htmx.org/attributes/hx-target/): Specify the target element for swapping — supports CSS selectors, `this`, `closest selector`, `find selector`, `next selector`, `previous selector`
+- [hx-swap](https://htmx.org/attributes/hx-swap/): Control swap strategy — `innerHTML` (default), `outerHTML`, `beforebegin`, `afterbegin`, `beforeend`, `afterend`, `delete`, `none`. Supports `swap:Xms`, `settle:Xms`, `scroll:top|bottom`, `show:top|bottom|window:top|window:bottom`, `ignoreTitle`, `transition`
+- [hx-select](https://htmx.org/attributes/hx-select/): CSS selector to pick a subset of the response to use for swapping
+- [hx-select-oob](https://htmx.org/attributes/hx-select-oob/): Select content for out-of-band swap from response
+- [hx-swap-oob](https://htmx.org/attributes/hx-swap-oob/): Mark element in server response to swap out-of-band (outside main target)
+- [hx-vals](https://htmx.org/attributes/hx-vals/): Add extra values to submit with request in JSON format: `hx-vals='{"key": "value"}'` or `hx-vals="js:{key: computeValue()}"`
+- [hx-boost](https://htmx.org/attributes/hx-boost/): Progressively enhance `<a>` and `<form>` tags to use AJAX instead of full page loads
+- [hx-push-url](https://htmx.org/attributes/hx-push-url/): Push a URL into the browser history stack — `true`, `false`, or a URL string
+- [hx-replace-url](https://htmx.org/attributes/hx-replace-url/): Replace the current URL in browser history — `true`, `false`, or a URL string
+
+## Additional Attributes
+
+- [hx-confirm](https://htmx.org/attributes/hx-confirm/): Show a `confirm()` dialog before issuing a request
+- [hx-prompt](https://htmx.org/attributes/hx-prompt/): Show a `prompt()` dialog and send user response as `HX-Prompt` header
+- [hx-include](https://htmx.org/attributes/hx-include/): Include additional elements' values in the request via CSS selector
+- [hx-params](https://htmx.org/attributes/hx-params/): Filter params submitted — `*` (all), `none`, `not param1,param2`, or `param1,param2`
+- [hx-indicator](https://htmx.org/attributes/hx-indicator/): CSS selector of element to add `htmx-request` class during request
+- [hx-headers](https://htmx.org/attributes/hx-headers/): Add extra headers to requests as JSON or JS object
+- [hx-ext](https://htmx.org/attributes/hx-ext/): Activate extensions for this element and its children (comma-separated)
+- [hx-disable](https://htmx.org/attributes/hx-disable/): Disable htmx processing for this element and descendants
+- [hx-disabled-elt](https://htmx.org/attributes/hx-disabled-elt/): Add `disabled` attribute to specified elements while request is in flight
+- [hx-disinherit](https://htmx.org/attributes/hx-disinherit/): Prevent child nodes from inheriting specified attributes
+- [hx-inherit](https://htmx.org/attributes/hx-inherit/): Re-enable attribute inheritance for specific attributes
+- [hx-encoding](https://htmx.org/attributes/hx-encoding/): Set request encoding type (`multipart/form-data` for file uploads)
+- [hx-history](https://htmx.org/attributes/hx-history/): Set to `false` to prevent sensitive data in history cache
+- [hx-history-elt](https://htmx.org/attributes/hx-history-elt/): Element to use for history snapshot/restore
+- [hx-on](https://htmx.org/attributes/hx-on/): Handle htmx events with inline scripts — `hx-on:htmx:before-request="..."`, `hx-on::after-settle="..."`
+- [hx-preserve](https://htmx.org/attributes/hx-preserve/): Keep this element unchanged across swaps (requires `id` attribute)
+- [hx-request](https://htmx.org/attributes/hx-request/): Configure request — `timeout`, `credentials`, `noHeaders` as JSON
+- [hx-sync](https://htmx.org/attributes/hx-sync/): Synchronize requests across elements — `drop`, `abort`, `replace`, `queue first|last|all`
+- [hx-validate](https://htmx.org/attributes/hx-validate/): Force HTML5 form validation before sending request
+
+## Response Headers
+
+- `HX-Location`: Client-side redirect without full page reload
+- `HX-Push-Url`: Push a new URL into the browser history
+- `HX-Redirect`: Trigger a full client-side redirect
+- `HX-Refresh`: Set to `true` to force a full page refresh
+- `HX-Replace-Url`: Replace the current URL in the history stack
+- `HX-Reswap`: Override the swap method for this response
+- `HX-Retarget`: Override the target element for this response
+- `HX-Reselect`: Override the select value for this response
+- `HX-Trigger`: Trigger client-side events after swap
+- `HX-Trigger-After-Settle`: Trigger events after settle phase
+- `HX-Trigger-After-Swap`: Trigger events after swap phase
+
+## Request Headers
+
+- `HX-Request`: Always `"true"` for htmx requests
+- `HX-Boosted`: `"true"` when using `hx-boost`
+- `HX-Current-URL`: The current browser URL
+- `HX-History-Restore-Request`: `"true"` for history restoration requests
+- `HX-Prompt`: User response from `hx-prompt`
+- `HX-Target`: `id` of the target element
+- `HX-Trigger`: `id` of the triggering element
+- `HX-Trigger-Name`: `name` of the triggering element
+
+## CSS Classes
+
+- `htmx-added`: Applied to new content before swap, removed after settle
+- `htmx-indicator`: Becomes visible (`opacity:1`) when `htmx-request` is present
+- `htmx-request`: Applied during an active request (to triggering element or `hx-indicator` target)
+- `htmx-settling`: Applied to target after swap, removed after settle duration
+- `htmx-swapping`: Applied to target before swap, removed after swap duration
+
+## Core Extensions
+
+- [head-support](https://htmx.org/extensions/head-support/): Merge `<head>` tag content (styles, scripts, title) from htmx responses
+- [htmx-1-compat](https://htmx.org/extensions/htmx-1-compat/): Restore htmx 1.x default behaviors in htmx 2
+- [idiomorph](https://htmx.org/extensions/idiomorph/): Morphing DOM swap strategy — preserves existing DOM nodes intelligently
+- [preload](https://htmx.org/extensions/preload/): Preload HTML fragments on mousedown or mouseover for near-instant navigation
+- [response-targets](https://htmx.org/extensions/response-targets/): Swap into different targets based on HTTP response status codes
+- [sse](https://htmx.org/extensions/sse/): Server Sent Events support — `sse-connect`, `sse-swap`, `sse-close`
+- [ws](https://htmx.org/extensions/ws/): WebSocket support — `ws-connect`, `ws-send`
+
+## Community Extensions
+
+- [ajax-header](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/ajax-header/README.md): Add `X-Requested-With: XMLHttpRequest` header to all requests
+- [alpine-morph](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/alpine-morph/README.md): Use Alpine.js morph plugin as htmx swap strategy to preserve Alpine state
+- [class-tools](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/class-tools/README.md): Add/remove CSS classes with timing sequences via `classes` attribute
+- [client-side-templates](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/client-side-templates/README.md): Render JSON/XML responses via Mustache, Handlebars, or Nunjucks templates
+- [debug](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/debug/README.md): Log all htmx events via `console.debug`
+- [event-header](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/event-header/README.md): Send `Triggering-Event` header with JSON-serialized trigger event
+- [json-enc](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/json-enc/README.md): Encode request body as JSON instead of `application/x-www-form-urlencoded`
+- [loading-states](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/loading-states/README.md): Manage loading state UI — disable buttons, add/remove classes while requests in flight
+- [morphdom-swap](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/morphdom-swap/README.md): Morphing swap strategy using morphdom library
+- [multi-swap](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/multi-swap/README.md): Swap multiple elements from response using `hx-swap-oob`-style syntax
+- [path-deps](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/path-deps/README.md): Declare URL path dependencies to auto-refresh elements
+- [path-params](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/path-params/README.md): Use form values as URL path parameters
+- [remove-me](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/remove-me/README.md): Remove an element after a CSS-style time duration
+- [restored](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/restored/README.md): Trigger a custom event when htmx restores content from browser history
+- [safe-nonce](https://github.com/MichaelWest22/htmx-extensions/blob/main/src/safe-nonce/README.md): Propagate CSP nonces to dynamically added scripts
+- [signalr](https://github.com/Renerick/htmx-signalr/blob/master/README.md): Real-time communication via ASP.NET SignalR
+- [hx-drag](https://www.npmjs.com/package/hx-drag): Send htmx requests on drag-and-drop events
+
+## Examples
+
+- [Active Search](https://htmx.org/examples/active-search/): Search-as-you-type with debouncing using `hx-trigger="keyup changed delay:500ms"`
+- [Click to Edit](https://htmx.org/examples/click-to-edit/): Inline editing — replace display with form on click, replace form with display on submit
+- [Click to Load](https://htmx.org/examples/click-to-load/): "Load more" pagination with `hx-trigger="click"` and `hx-swap="outerHTML"`
+- [Infinite Scroll](https://htmx.org/examples/infinite-scroll/): Auto-load next page when last row is visible using `hx-trigger="revealed"`
+- [Inline Validation](https://htmx.org/examples/inline-validation/): Validate form fields on blur and show server-side error messages
+- [Bulk Update](https://htmx.org/examples/bulk-update/): Update multiple rows simultaneously with a single request
+- [Delete Row](https://htmx.org/examples/delete-row/): Delete rows with `hx-delete` and `hx-swap="delete"` or `hx-target="closest tr"`
+- [File Upload](https://htmx.org/examples/file-upload/): Upload files with progress bar using `hx-encoding="multipart/form-data"`
+- [Dialogs](https://htmx.org/examples/dialogs/): Modal dialogs using browser's `<dialog>` element and htmx events
+- [Sortable](https://htmx.org/examples/sortable/): Drag-and-drop list sorting with SortableJS integration
+- [Lazy Loading](https://htmx.org/examples/lazy-load/): Load heavy content lazily with `hx-trigger="load"` and spinner indicator
+
+## Optional
+
+- [Server Examples](https://htmx.org/server-examples/): Example implementations for Node.js, Django, Flask, Rails, Go, etc.
+- [Essays](https://htmx.org/essays/): Hypermedia Systems, HATEOAS, and REST concepts explained
+- [Building Extensions](https://htmx.org/extensions/building/): How to create custom htmx extensions
