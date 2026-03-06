@@ -1,0 +1,47 @@
+# EasyAuth
+
+> EasyAuth is a managed authentication service that provides drop-in auth for web apps, supporting OAuth providers, session management, and user profiles via a hosted API.
+
+EasyAuth simplifies authentication by handling OAuth flows, session tokens, and user profile storage as a hosted service. You point your app at EasyAuth endpoints, complete the OAuth redirect flow, and receive a session token you can validate on your server. No official `llms.txt` was published by EasyAuth; this file is curated from the official documentation at https://easyauth.io/docs/.
+
+## Getting Started
+
+- [Docs Overview](https://easyauth.io/docs/): EasyAuth documentation landing page — overview, key concepts, quickstart links
+- [React Quickstart](https://easyauth.io/docs/react/quickstart): Add EasyAuth to a React app — install SDK, wrap with provider, use `useSession` hook
+- [NextAuth Quickstart](https://easyauth.io/docs/nextauth/quickstart): Integrate EasyAuth as a NextAuth.js provider — configure `providers` array, session callbacks
+- [Express & Passport.js Quickstart](https://easyauth.io/docs/express-passport/quickstart): Use EasyAuth with Express and Passport.js — strategy setup, session serialization, protected routes
+
+## Core Concepts
+
+- **OAuth redirect flow**: EasyAuth hosts the OAuth consent screen. Your app redirects to EasyAuth, the user authenticates, and EasyAuth redirects back with a code your server exchanges for a session.
+- **Session tokens**: After a successful login, EasyAuth returns a signed session token. Validate it server-side using the EasyAuth SDK or by calling the token introspection endpoint.
+- **User profiles**: Authenticated users have a profile (id, email, name, avatar) accessible from the session object returned by EasyAuth.
+- **Providers**: EasyAuth supports standard OAuth2 providers (Google, GitHub, etc.) configured through the EasyAuth dashboard.
+
+## SDK / Package References
+
+- Install the EasyAuth JavaScript SDK: `npm install easyauth-client` (check official docs for the current package name)
+- React: wrap the app with `<EasyAuthProvider>` and access the session with `useSession()`
+- Server-side: use the SDK's `verifyToken(token)` helper to validate session tokens in middleware
+
+## Integration Patterns
+
+### Bun / Elysia
+
+Use EasyAuth as the auth layer alongside an Elysia backend on Bun:
+
+1. Redirect unauthenticated requests to the EasyAuth login URL.
+2. After the OAuth callback, exchange the code for a session token via EasyAuth's token endpoint.
+3. Store the session token in a cookie; validate it in an Elysia `beforeHandle` lifecycle hook using the EasyAuth SDK.
+4. Use Prisma to store user records keyed on the EasyAuth user id.
+
+### htmx
+
+When using htmx for hypermedia-driven UIs:
+- Protect server-rendered partials by validating the EasyAuth session cookie in each route handler.
+- Return `HX-Redirect` response headers to redirect unauthenticated htmx requests to the EasyAuth login flow.
+
+## Optional
+
+- [EasyAuth Website](https://easyauth.io/): Product overview, pricing, and dashboard
+- [EasyAuth Docs Home](https://easyauth.io/docs/): Full documentation
