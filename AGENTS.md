@@ -22,7 +22,9 @@ llms-stack-refresh/
 └── docs/
     ├── INDEX.md         # Canonical navigation map
     ├── CONTRIBUTING.md  # Contribution guide
-    └── PROVENANCE.md    # Provenance policy
+    ├── PROVENANCE.md    # Provenance policy
+    ├── EXTENSIONS.md    # Deep-dive reference for every tool's extension/plugin system
+    └── IDE-SETUP.md     # Step-by-step setup for every AI coding tool and IDE
 ```
 
 **Do not rename or move existing directories.** The raw GitHub URLs for each `llms.txt` are used directly by AI tools and users; changing paths breaks those references.
@@ -34,6 +36,8 @@ llms-stack-refresh/
 - Start at `README.md` for an overview and usage instructions.
 - Use `docs/INDEX.md` to find the correct `llms.txt` file for a given technology.
 - Each `llms.txt` is self-contained. Consume the whole file when the tech is relevant to the task.
+- Consult `docs/EXTENSIONS.md` when a user asks about extending, customising, or adding plugins to any tool in the stack. This file contains the canonical deep-dive reference for every tool's plugin/extension/customization system, including exact API names, hook names, and configuration points.
+- Consult `docs/IDE-SETUP.md` when a user asks how to configure an AI coding tool or IDE to use this repository's documentation as context.
 
 ### Editing or adding docs
 
@@ -85,3 +89,4 @@ llms-stack-refresh/
 - Do not change the `llmstxt.org`-compliant format of any `llms.txt` file.
 - Do not commit secrets, credentials, or environment-specific configuration.
 - Do not create new top-level directories without updating `README.md` and `docs/INDEX.md`.
+- Do not add emojis to any file in this repository.

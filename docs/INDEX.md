@@ -43,6 +43,8 @@ Canonical navigation map for `llms-stack-refresh`. Use this file to locate the c
 | [`docs/INDEX.md`](INDEX.md) | This file — canonical navigation map |
 | [`docs/CONTRIBUTING.md`](CONTRIBUTING.md) | How to add or improve an `llms.txt` |
 | [`docs/PROVENANCE.md`](PROVENANCE.md) | Provenance policy and sourcing rules |
+| [`docs/EXTENSIONS.md`](EXTENSIONS.md) | Deep-dive reference for every tool's plugin/extension/customization system |
+| [`docs/IDE-SETUP.md`](IDE-SETUP.md) | Step-by-step setup instructions for every major AI coding tool and IDE |
 
 ## Provenance Key
 
