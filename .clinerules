@@ -8,7 +8,7 @@ When working on this project, fetch and read the following documentation files b
 - Prisma: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt
 - Tailwind CSS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
 - daisyUI: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt
-- EasyAuth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- Better Auth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt
 - Plugin/extension systems: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/docs/EXTENSIONS.md
 
 ## Stack Conventions
@@ -18,4 +18,4 @@ When working on this project, fetch and read the following documentation files b
 - Database ORM: Prisma
 - UI interactivity: htmx (no JavaScript framework)
 - Styling: Tailwind CSS + daisyUI
-- Auth: EasyAuth
+- Auth: Better Auth

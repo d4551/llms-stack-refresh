@@ -1,6 +1,6 @@
 # llms-stack-refresh
 
-> Purpose: Curated `llms.txt` documentation index for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/EasyAuth stack. Optimised for AI agent context ingestion.
+> Purpose: Curated `llms.txt` documentation index for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/Better Auth stack. Optimised for AI agent context ingestion.
 
 Each file is sourced from official documentation or curated from official primary-source documentation where no official file exists. Format spec: [llmstxt.org](https://llmstxt.org/).
 
@@ -14,7 +14,7 @@ llms-stack-refresh/
 ├── CODEX.md              OpenAI Codex auto-discovery file
 ├── bun/llms.txt          Official Bun docs (runtime, bundler, plugins, macros, workspaces)
 ├── daisyui/llms.txt      Official daisyUI docs (components, themes, plugin config)
-├── easy-auth/llms.txt    Curated EasyAuth docs (OAuth, sessions, Bun/Elysia integration)
+├── better-auth/llms.txt  Better Auth docs (auth library, OAuth, sessions, plugins, Bun/Elysia integration)
 ├── elysiajs/llms.txt     Curated ElysiaJS docs (routes, lifecycle, plugins, Eden)
 ├── htmx/llms.txt         Curated htmx docs (attributes, headers, extensions)
 ├── prisma/llms.txt       Curated Prisma docs (schema, client, migrate, $extends)
@@ -38,7 +38,7 @@ llms-stack-refresh/
 |------------|------|------------|-------|
 | [Bun](./bun/llms.txt) | `bun/llms.txt` | **Official** — https://bun.sh/llms.txt | All-in-one JS/TS runtime, bundler, test runner, package manager; plugin API, macros, workspaces |
 | [daisyUI](./daisyui/llms.txt) | `daisyui/llms.txt` | **Official** — https://daisyui.com/llms.txt | Tailwind CSS component library (v5); themes, plugin config, component rules |
-| [EasyAuth](./easy-auth/llms.txt) | `easy-auth/llms.txt` | Curated — https://easyauth.io/docs/ | Managed auth service; OAuth, sessions, user profiles; Bun/Elysia/htmx integration patterns |
+| [Better Auth](./better-auth/llms.txt) | `better-auth/llms.txt` | Curated — https://better-auth.com/docs | TypeScript auth library; OAuth providers, sessions, plugins, Bun/Elysia/htmx integration |
 | [ElysiaJS](./elysiajs/llms.txt) | `elysiajs/llms.txt` | Curated — https://elysiajs.com | TypeScript web framework for Bun; routes, validation, lifecycle, plugins (`bearer`, `cors`, `jwt`), Eden E2E type safety |
 | [htmx](./htmx/llms.txt) | `htmx/llms.txt` | Curated — https://htmx.org | HTML-first AJAX library; full `hx-*` attribute reference, response headers, extensions, extension building |
 | [Prisma](./prisma/llms.txt) | `prisma/llms.txt` | Curated — https://www.prisma.io/docs | Node.js/TypeScript ORM; schema, client, migrate, platform, `$extends` client extensions |
@@ -46,7 +46,7 @@ llms-stack-refresh/
 
 > **Note on Tailwind CSS**: Tailwind Labs has not officially published an `llms.txt` file ([see discussion](https://github.com/tailwindlabs/tailwindcss/discussions/18256)). The file here is curated from the official documentation source.
 >
-> **Note on EasyAuth**: No official `llms.txt` was found. `easy-auth/llms.txt` is curated from the official EasyAuth documentation at https://easyauth.io/docs/.
+> **Note on Better Auth**: No official `llms.txt` was published by Better Auth. `better-auth/llms.txt` is curated from the official Better Auth documentation at https://better-auth.com/docs/.
 
 ## Stack Composition
 
@@ -55,7 +55,7 @@ These tools are commonly combined as a full-stack TypeScript/Bun workflow:
 | Layer | Tool | Role |
 |-------|------|------|
 | Runtime / backend | Bun + Elysia | Fast HTTP server with E2E type safety |
-| Auth | EasyAuth | Managed OAuth / session layer |
+| Auth | Better Auth | TypeScript auth library with OAuth, sessions, and plugins |
 | Hypermedia UI | htmx | Server-driven UI without a JS framework |
 | Data / ORM | Prisma | Type-safe database access and migrations |
 | Styling | Tailwind CSS + daisyUI | Utility classes with pre-built components |
@@ -65,7 +65,7 @@ These tools are commonly combined as a full-stack TypeScript/Bun workflow:
 ```
 Browser (htmx attributes)
   -> Elysia route handler (Bun)
-      -> EasyAuth session validation (beforeHandle hook)
+      -> Better Auth session validation (beforeHandle hook)
       -> Prisma query (type-safe, $extends for custom logic)
   -> Server renders HTML partial (Tailwind CSS + daisyUI classes)
 Browser swaps partial into DOM (hx-target / hx-swap)
@@ -140,16 +140,18 @@ Each tool in this stack has official extension mechanisms. Treat these as primar
 - **Reference in this repo**: `daisyui/llms.txt` -- see Themes and Configuration sections
 - **Upstream docs**: https://daisyui.com/docs/themes/
 
-### EasyAuth -- Integration Layer
+### Better Auth -- Plugin System and Auth Integration
 
-- **Entry point**: Session token validation in Elysia `beforeHandle` lifecycle hook
-- **What it does**: EasyAuth is an auth integration layer, not a plugin framework. Integrate EasyAuth by validating session tokens before handling requests.
+- **Entry point**: `betterAuth()` configuration with `plugins` array; session validation via `auth.api.getSession()` in Elysia `beforeHandle` lifecycle hook
+- **What it does**: Better Auth is a TypeScript authentication library with a real plugin system. It provides handlers for auth routes (sign-in, sign-up, OAuth callback, session) and a typed session validation API.
 - **Key integration points**:
-  - `beforeHandle` hook in Elysia for session validation
+  - Mount `auth.handler` in Elysia to handle all auth routes at `/api/auth/*`
+  - `auth.api.getSession({ headers })` in `beforeHandle` hook for session validation
   - `HX-Redirect` response header for htmx unauthenticated redirect flows
-  - OAuth provider configuration via the EasyAuth dashboard
-- **Reference in this repo**: `easy-auth/llms.txt` -- see Integration Patterns section
-- **Upstream docs**: https://easyauth.io/docs/
+  - `prismaAdapter` from `better-auth/adapters/prisma` for database integration
+- **Plugin system**: Pass plugins to the `plugins` array in `betterAuth()`. Official plugins include `organization()`, `twoFactor()`, `passkey()`, `magicLink()`, `admin()`, `username()`, `bearer()`
+- **Reference in this repo**: `better-auth/llms.txt` -- see Plugins and Integration Patterns sections
+- **Upstream docs**: https://better-auth.com/docs
 
 ## AI Coding Tool Integration
 
@@ -172,7 +174,7 @@ Place `.github/copilot-instructions.md` in your project to auto-include context:
 When working with this project, reference these llms.txt files:
 - [Bun](https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt)
 - [ElysiaJS](https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt)
-- [EasyAuth](https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt)
+- [Better Auth](https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt)
 - [htmx](https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt)
 - [Tailwind CSS](https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt)
 - [daisyUI](https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt)
@@ -200,7 +202,7 @@ Reference these documentation files when working on this stack:
 - https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt
 - https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
 - https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt
-- https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt
 ```
 
 Use `@docs` in Cursor Chat to reference documentation, or `@web` with a raw GitHub URL.
@@ -285,7 +287,7 @@ Clone and reference files locally:
 
 ```bash
 git clone https://github.com/d4551/llms-stack-refresh.git
-# Files are in: bun/, daisyui/, easy-auth/, elysiajs/, htmx/, prisma/, tailwindcss/
+# Files are in: bun/, daisyui/, better-auth/, elysiajs/, htmx/, prisma/, tailwindcss/
 ```
 
 Symlink into a project:
@@ -308,7 +310,7 @@ Direct links for use in AI tools:
 |------------|---------|
 | Bun | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt` |
 | daisyUI | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt` |
-| EasyAuth | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt` |
+| Better Auth | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt` |
 | ElysiaJS | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt` |
 | htmx | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt` |
 | Prisma | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt` |

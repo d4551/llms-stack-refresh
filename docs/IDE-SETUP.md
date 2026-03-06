@@ -1,6 +1,6 @@
 # IDE and AI Coding Tool Setup
 
-Setup directives for using this repository's `llms.txt` files with every major AI coding tool and IDE. Consume the relevant section to configure context for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/EasyAuth stack.
+Setup directives for using this repository's `llms.txt` files with every major AI coding tool and IDE. Consume the relevant section to configure context for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/Better Auth stack.
 
 All raw file URLs follow this pattern:
 
@@ -14,7 +14,7 @@ Full URL table:
 |------------|---------|
 | Bun | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt` |
 | ElysiaJS | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt` |
-| EasyAuth | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt` |
+| Better Auth | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt` |
 | htmx | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt` |
 | Prisma | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt` |
 | Tailwind CSS | `https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt` |
@@ -56,7 +56,7 @@ When working on this project, reference these documentation files for the techno
 
 - Bun runtime and bundler: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt
 - ElysiaJS web framework: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt
-- EasyAuth integration: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- Better Auth integration: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt
 - htmx hypermedia library: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt
 - Tailwind CSS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
 - daisyUI component library: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt
@@ -128,7 +128,7 @@ When generating or reviewing code for this project, fetch and read the relevant 
 
 - Bun: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt
 - ElysiaJS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt
-- EasyAuth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- Better Auth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt
 - htmx: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt
 - Prisma: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt
 - Tailwind CSS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
@@ -172,7 +172,7 @@ When working on this project, reference the following documentation files for co
 - https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt
 - https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
 - https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt
-- https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt
 ```
 
 ### Using Cascade with documentation context
@@ -211,7 +211,7 @@ When working on this project, fetch and read the following documentation files b
 - Prisma: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt
 - Tailwind CSS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
 - daisyUI: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt
-- EasyAuth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- Better Auth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt
 
 ## Stack Conventions
 
@@ -220,7 +220,7 @@ When working on this project, fetch and read the following documentation files b
 - Database ORM: Prisma
 - UI interactivity: htmx (no JavaScript framework)
 - Styling: Tailwind CSS + daisyUI
-- Auth: EasyAuth
+- Auth: Better Auth
 ```
 
 Cline reads `.clinerules` automatically when a task starts in that workspace.
@@ -268,7 +268,7 @@ Recommended files to upload for this stack:
 - `prisma/llms.txt`
 - `tailwindcss/llms.txt`
 - `daisyui/llms.txt`
-- `easy-auth/llms.txt`
+- `better-auth/llms.txt`
 
 ### System prompt pattern for API usage
 
@@ -353,7 +353,7 @@ read:
   - /path/to/llms-stack-refresh/prisma/llms.txt
   - /path/to/llms-stack-refresh/tailwindcss/llms.txt
   - /path/to/llms-stack-refresh/daisyui/llms.txt
-  - /path/to/llms-stack-refresh/easy-auth/llms.txt
+  - /path/to/llms-stack-refresh/better-auth/llms.txt
 ```
 
 Replace `/path/to/llms-stack-refresh/` with the actual path to your local clone of this repository.
@@ -392,7 +392,7 @@ Example `.continue/config.json`:
           "https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt",
           "https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt",
           "https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt",
-          "https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt"
+          "https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt"
         ]
       }
     }
@@ -452,7 +452,7 @@ git clone https://github.com/d4551/llms-stack-refresh.git
 cd llms-stack-refresh
 ```
 
-Files are in: `bun/`, `daisyui/`, `easy-auth/`, `elysiajs/`, `htmx/`, `prisma/`, `tailwindcss/`
+Files are in: `bun/`, `daisyui/`, `better-auth/`, `elysiajs/`, `htmx/`, `prisma/`, `tailwindcss/`
 
 ### Symlinking files into a project
 

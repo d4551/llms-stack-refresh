@@ -1,5 +1,5 @@
 ---
-description: Documentation context for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/EasyAuth stack
+description: Documentation context for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/Better Auth stack
 globs:
   - "**/*.ts"
   - "**/*.tsx"
@@ -14,7 +14,7 @@ When generating or reviewing code for this project, fetch and read the relevant 
 
 - Bun: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt
 - ElysiaJS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt
-- EasyAuth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- Better Auth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt
 - htmx: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt
 - Prisma: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt
 - Tailwind CSS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
@@ -28,4 +28,4 @@ When generating or reviewing code for this project, fetch and read the relevant 
 - Use htmx attributes for interactivity. Do not add a JavaScript framework.
 - Use Prisma for database access.
 - Use Tailwind CSS and daisyUI for styling.
-- Use EasyAuth for authentication.
+- Use Better Auth for authentication.

@@ -13,7 +13,7 @@ Canonical file routing map. Consume this file to resolve technology name to `llm
 
 | Stack | File | Provenance | Notes |
 |-------|------|------------|-------|
-| EasyAuth | [`easy-auth/llms.txt`](../easy-auth/llms.txt) | Curated — https://easyauth.io/docs/ | Managed auth service; OAuth providers, session tokens, user profiles; no official llms.txt exists |
+| Better Auth | [`better-auth/llms.txt`](../better-auth/llms.txt) | Curated — https://better-auth.com/docs | TypeScript auth library; OAuth providers, sessions, plugins, Bun/Elysia/htmx integration; no official llms.txt exists |
 
 ## Hypermedia / Frontend
 

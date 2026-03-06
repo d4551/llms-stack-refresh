@@ -1,0 +1,68 @@
+# Better Auth
+
+> Better Auth is a comprehensive, framework-agnostic TypeScript authentication and authorization library. It supports email/password, OAuth (40+ providers), two-factor authentication, passkeys, session management, organizations, and a plugin system. MIT licensed.
+
+Better Auth runs server-side and provides a typed API for authentication flows, session validation, and user management. It integrates with Prisma, Drizzle, and other databases via adapters. No official `llms.txt` was published by Better Auth; this file is curated from the official documentation at https://better-auth.com/docs/.
+
+## Getting Started
+
+- [Docs Overview](https://www.better-auth.com/docs): Better Auth documentation landing page — overview, key concepts, quickstart guides
+- [Installation](https://www.better-auth.com/docs/installation): Install via `bun add better-auth`; initialize with `betterAuth()` on the server and `createAuthClient()` on the client
+- [Basic Usage](https://www.better-auth.com/docs/basic-usage): Configure auth instance, mount the handler, call from the client
+
+## Core Concepts
+
+- **Email and password**: Built-in sign-up and sign-in with email/password. Enable via the `emailAndPassword` option in `betterAuth()`.
+- **OAuth providers**: 40+ supported providers (GitHub, Google, Discord, etc.). Configure in the `socialProviders` option.
+- **Two-factor authentication**: TOTP-based 2FA via the `twoFactor` plugin.
+- **Passkeys**: WebAuthn passkey support via the `passkey` plugin.
+- **Session management**: Better Auth issues and validates sessions server-side. Sessions are stored in the configured database via the adapter. Call `auth.api.getSession()` to validate a session from a request.
+- **User profiles**: The user object (id, email, name, image, emailVerified, createdAt, updatedAt) is returned with every valid session.
+- **Database adapters**: Prisma adapter (`@better-auth/prisma`), Drizzle adapter, and others. Pass the adapter as `database` in `betterAuth()`.
+
+## SDK / Package References
+
+- Install: `bun add better-auth`
+- Server setup: `import { betterAuth } from "better-auth"` — call `betterAuth({ database, emailAndPassword, socialProviders, plugins })` to create the auth instance
+- Auth handler: `auth.handler` — an HTTP handler that processes all auth routes (`/api/auth/sign-in`, `/api/auth/sign-up`, `/api/auth/callback`, `/api/auth/session`, etc.)
+- Session validation: `auth.api.getSession({ headers })` — returns the session and user for the given request headers, or `null` if unauthenticated
+- Client setup: `import { createAuthClient } from "better-auth/client"` — call `createAuthClient({ baseURL })` to create the browser-side client
+- Client methods: `authClient.signIn.email()`, `authClient.signIn.social()`, `authClient.signOut()`, `authClient.getSession()`
+- Prisma adapter: `import { prismaAdapter } from "better-auth/adapters/prisma"` — pass `database: prismaAdapter(prisma, { provider: "sqlite" | "postgresql" | "mysql" })`
+
+## Integration Patterns
+
+### Bun / Elysia
+
+Mount the Better Auth handler in an Elysia app and protect routes using the `beforeHandle` lifecycle hook:
+
+1. Create the auth instance with `betterAuth()` and pass it the Prisma adapter.
+2. Mount the handler: `app.all("/api/auth/*", ({ request }) => auth.handler(request))`.
+3. Validate sessions in protected routes using `auth.api.getSession({ headers: request.headers })` inside a `beforeHandle` hook.
+4. Return a 401 or redirect if the session is null.
+
+### htmx
+
+When using htmx for hypermedia-driven UIs:
+- Protect server-rendered partials by calling `auth.api.getSession()` in each Elysia route handler.
+- Return `HX-Redirect` response headers to redirect unauthenticated htmx requests to the login page without a full page reload.
+
+## Plugins
+
+Better Auth ships a plugin system. Pass plugins to the `plugins` array in `betterAuth()`:
+
+- `organization()` — multi-tenant organization support with roles and permissions
+- `twoFactor()` — TOTP-based two-factor authentication
+- `passkey()` — WebAuthn passkey authentication
+- `magicLink()` — passwordless sign-in via email magic link
+- `admin()` — admin panel and user management APIs
+- `username()` — add a username field to user accounts
+- `bearer()` — bearer token session strategy for API clients
+
+Each plugin may extend the database schema (run `bunx better-auth generate` to update the Prisma schema file, then `bunx prisma migrate dev` to apply the migration) and expose additional client methods via a matching client plugin.
+
+## Optional
+
+- [Better Auth Website](https://better-auth.com/): Project overview, feature list, and documentation home
+- [Better Auth GitHub](https://github.com/better-auth/better-auth): Source code, issues, and releases
+- [Better Auth Docs Home](https://www.better-auth.com/docs): Full documentation

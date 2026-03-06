@@ -2,12 +2,12 @@
 
 ## Stack
 
-This project uses the Bun/Elysia/htmx/Prisma/Tailwind CSS/daisyUI/EasyAuth stack.
+This project uses the Bun/Elysia/htmx/Prisma/Tailwind CSS/daisyUI/Better Auth stack.
 
 | Layer | Tool | Role |
 |-------|------|------|
 | Runtime / backend | Bun + Elysia | Fast HTTP server with E2E type safety |
-| Auth | EasyAuth | Managed OAuth / session layer |
+| Auth | Better Auth | TypeScript auth library with OAuth, sessions, and plugins |
 | Hypermedia UI | htmx | Server-driven UI without a JS framework |
 | Data / ORM | Prisma | Type-safe database access and migrations |
 | Styling | Tailwind CSS + daisyUI | Utility classes with pre-built components |
@@ -19,7 +19,7 @@ This project uses the Bun/Elysia/htmx/Prisma/Tailwind CSS/daisyUI/EasyAuth stack
 - Use htmx attributes for interactivity. Do not add a JavaScript framework.
 - Use Prisma for database access.
 - Use Tailwind CSS and daisyUI for styling.
-- Use EasyAuth for authentication.
+- Use Better Auth for authentication.
 
 ## External Documentation
 
@@ -27,7 +27,7 @@ When working on this project or any project using this stack, fetch and referenc
 
 - Bun runtime and bundler: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt
 - ElysiaJS web framework: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt
-- EasyAuth integration: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- Better Auth integration: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/better-auth/llms.txt
 - htmx hypermedia library: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt
 - Tailwind CSS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
 - daisyUI component library: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt
