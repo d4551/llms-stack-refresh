@@ -1,0 +1,68 @@
+# htmx
+
+> htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext.
+
+## Documentation
+
+- [Introduction](https://htmx.org/docs/): Full htmx documentation covering all attributes, events, and configuration
+- [Reference](https://htmx.org/reference/): Complete reference for all htmx attributes, headers, events, and JavaScript API
+- [Attributes](https://htmx.org/attributes/hx-get/): htmx core attributes (hx-get, hx-post, hx-put, hx-patch, hx-delete, hx-trigger, hx-target, hx-swap, hx-boost, hx-push-url, hx-select, hx-include, hx-params, hx-indicator, hx-confirm, hx-on, hx-vals, hx-headers, hx-ext)
+- [Events](https://htmx.org/events/): htmx event system documentation
+- [JavaScript API](https://htmx.org/api/): htmx.ajax(), htmx.find(), htmx.findAll(), htmx.trigger(), htmx.process() and more
+- [Migration Guide (htmx 1.x)](https://htmx.org/migration-guide-htmx-1/): Guide for migrating from htmx 1.x to 2.x
+- [Quirks](https://htmx.org/quirks/): Known quirks and edge cases in htmx
+
+## Core Extensions
+
+- [head-support](https://htmx.org/extensions/head-support/): Provides support for merging head tag information (styles, etc.) in htmx requests
+- [htmx-1-compat](https://htmx.org/extensions/htmx-1-compat/): Rolls back most of the behavioral changes of htmx 2 to the htmx 1 defaults.
+- [idiomorph](https://htmx.org/extensions/idiomorph/): Provides a `morph` swap strategy based on the idiomorph morphing library
+- [preload](https://htmx.org/extensions/preload/): Load HTML fragments into browser cache before they are requested for faster perceived performance
+- [response-targets](https://htmx.org/extensions/response-targets/): Specify different target elements to be swapped when different HTTP response codes are received
+- [sse](https://htmx.org/extensions/sse/): Provides support for Server Sent Events directly from HTML
+- [ws](https://htmx.org/extensions/ws/): Provides bi-directional communication with Web Sockets servers directly from HTML
+
+## Community Extensions
+
+- [ajax-header](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/ajax-header/README.md): Adds an `X-Requested-With` header to all requests made by htmx
+- [alpine-morph](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/alpine-morph/README.md): Use Alpine.js morph plugin as the swapping mechanism in htmx to retain Alpine state
+- [attribute-tools](https://github.com/jamcole/htmx-ext-attribute-tools/blob/main/README.md): Swap attributes onto or off elements using an `attributes` or `data-attributes` attribute
+- [class-tools](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/class-tools/README.md): Swap CSS classes onto or off elements using a `classes` or `data-classes` attribute
+- [client-side-templates](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/client-side-templates/README.md): Transform a JSON/XML request response into HTML via a client-side template before swapping into the DOM
+- [debug](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/debug/README.md): Log all htmx events for the attached element through `console.debug`
+- [event-header](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/event-header/README.md): Adds the `Triggering-Event` header containing a JSON serialized version of the triggering event
+- [json-enc](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/json-enc/README.md): Encode parameters in JSON format instead of url format
+- [loading-states](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/loading-states/README.md): Manage loading states while a request is in flight, including disabling elements and adding/removing CSS classes
+- [morphdom-swap](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/morphdom-swap/README.md): Provides a `morph` swap strategy based on the morphdom morphing library
+- [multi-swap](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/multi-swap/README.md): Swap multiple elements marked from the HTML response with configurable swap methods per element
+- [no-cache](https://github.com/craigharman/htmx-ext-no-cache/blob/master/README.md): Force htmx to bypass client caches and make a new request
+- [path-deps](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/path-deps/README.md): Express inter-element dependencies based on paths, inspired by intercooler.js dependencies mechanism
+- [path-params](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/path-params/README.md): Use request parameters to populate path variables, removing used parameters from query string or body
+- [remove-me](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/remove-me/README.md): Remove an element after a specified interval
+- [restored](https://github.com/bigskysoftware/htmx-extensions/blob/main/src/restored/README.md): Triggers an event whenever a back button event is detected while using `hx-boost`
+- [safe-nonce](https://github.com/MichaelWest22/htmx-extensions/blob/main/src/safe-nonce/README.md): Improve security by allowing return of known trusted inline scripts safely
+- [signalr](https://github.com/Renerick/htmx-signalr/blob/master/README.md): Provides bidirectional real-time communication via SignalR
+- [hx-drag](https://www.npmjs.com/package/hx-drag): Allows htmx requests to be sent for drag and drop interactions
+- [dynamic-url](https://github.com/FumingPower3925/htmx-dynamic-url/blob/main/README.md): Dynamic URL path templating using `{varName}` placeholders, resolved via custom function or `window.` fallback
+
+## Examples
+
+- [Active Search](https://htmx.org/examples/active-search/): Implement active search functionality
+- [Async Authentication](https://htmx.org/examples/async-auth/): Handle async authentication
+- [Bulk Update](https://htmx.org/examples/bulk-update/): Bulk update table rows
+- [Click to Edit](https://htmx.org/examples/click-to-edit/): Inline editing pattern
+- [Click to Load](https://htmx.org/examples/click-to-load/): Load more rows on demand
+- [Delete Row](https://htmx.org/examples/delete-row/): Delete table rows with confirmation
+- [Dialogs](https://htmx.org/examples/dialogs/): Modal dialogs with htmx
+- [Edit Row](https://htmx.org/examples/edit-row/): Inline row editing
+- [File Upload](https://htmx.org/examples/file-upload/): Upload files with progress indicator
+- [Infinite Scroll](https://htmx.org/examples/infinite-scroll/): Infinite scroll pattern
+- [Inline Validation](https://htmx.org/examples/inline-validation/): Validate form fields inline
+- [Lazy Loading](https://htmx.org/examples/lazy-load/): Lazy load content
+- [Sortable](https://htmx.org/examples/sortable/): Drag and drop sorting
+- [Value Select](https://htmx.org/examples/value-select/): Cascading selects
+
+## Optional
+
+- [Server Examples](https://htmx.org/server-examples/): Example implementations in various server-side frameworks
+- [Essays](https://htmx.org/essays/): In-depth essays on htmx and hypermedia concepts

@@ -1,0 +1,80 @@
+# ElysiaJS
+
+> Ergonomic Framework for Humans. TypeScript with End-to-End Type Safety, unified type system, and outstanding developer experience. Supercharged by Bun.
+
+## Getting Started
+
+- [Quick Start](https://elysiajs.com/quick-start.md): Get started with Elysia in minutes
+- [Key Concept](https://elysiajs.com/key-concept.md): Core concepts of Elysia and how to use it effectively
+- [Tutorial](https://elysiajs.com/tutorial): Step-by-step interactive tutorial for building your first Elysia application
+- [At a Glance](https://elysiajs.com/at-glance.md): Overview of Elysia's features and design philosophy
+
+## Essential
+
+- [Route](https://elysiajs.com/essential/route.md): How routing works in Elysia - defining paths, parameters, and HTTP methods
+- [Handler](https://elysiajs.com/essential/handler.md): Handling requests - context, response, and request lifecycle
+- [Validation](https://elysiajs.com/essential/validation.md): Enforce type safety with Elysia's type-box powered validation
+- [Lifecycle](https://elysiajs.com/essential/lifecycle.md): Understanding request lifecycle hooks (onRequest, beforeHandle, afterHandle, onError, etc.)
+- [Plugin](https://elysiajs.com/essential/plugin.md): Extending Elysia with reusable plugins and scoping
+- [Best Practice](https://elysiajs.com/essential/best-practice.md): Best practices for writing maintainable Elysia code
+
+## Patterns
+
+- [WebSocket](https://elysiajs.com/patterns/websocket.md): Real-time bidirectional communication with WebSockets
+- [Server Sent Events](https://elysiajs.com/patterns/server-sent-events.md): Push data to clients using Server Sent Events
+- [Unit Test](https://elysiajs.com/patterns/unit-test.md): Testing Elysia applications
+- [Mount](https://elysiajs.com/patterns/mount.md): Mount other WHATWG-compatible framework or Elysia instance
+- [Lazy Loading](https://elysiajs.com/patterns/lazy-loading.md): Lazy load routes for better performance
+- [Reference Model](https://elysiajs.com/patterns/reference-model.md): Reusable type models and schema references
+- [OpenTelemetry](https://elysiajs.com/patterns/opentelemetry.md): Monitor your application with OpenTelemetry
+- [Deploy](https://elysiajs.com/patterns/deploy.md): Deploy Elysia applications to production
+
+## Eden (End-to-End Type Safety)
+
+- [Overview](https://elysiajs.com/eden/overview.md): Introduction to Eden, Elysia's type-safe client
+- [Installation](https://elysiajs.com/eden/installation.md): Install Eden client
+- [Eden Treaty](https://elysiajs.com/eden/treaty/overview.md): Type-safe HTTP client for Elysia
+- [Eden Fetch](https://elysiajs.com/eden/fetch.md): Fetch-compatible type-safe client
+
+## Plugins
+
+- [Bearer](https://elysiajs.com/plugins/bearer.md): Bearer token authentication plugin
+- [CORS](https://elysiajs.com/plugins/cors.md): Cross-Origin Resource Sharing configuration
+- [Cron](https://elysiajs.com/plugins/cron.md): Schedule recurring tasks with cron
+- [GraphQL Apollo](https://elysiajs.com/plugins/graphql-apollo.md): Apollo GraphQL server integration
+- [GraphQL Yoga](https://elysiajs.com/plugins/graphql-yoga.md): GraphQL Yoga server integration
+- [HTML](https://elysiajs.com/plugins/html.md): Serve HTML with JSX support
+- [JWT](https://elysiajs.com/plugins/jwt.md): JSON Web Token authentication
+- [OpenAPI](https://elysiajs.com/plugins/openapi.md): Auto-generate OpenAPI (Swagger) documentation
+- [Server Timing](https://elysiajs.com/plugins/server-timing.md): Add Server-Timing headers for performance monitoring
+- [Static](https://elysiajs.com/plugins/static.md): Serve static files
+- [Stream](https://elysiajs.com/plugins/stream.md): Stream data to clients
+- [Swagger](https://elysiajs.com/plugins/swagger.md): Swagger UI documentation
+- [Trpc](https://elysiajs.com/plugins/trpc.md): tRPC integration for Elysia
+
+## Integrations
+
+- [Astro](https://elysiajs.com/integrations/astro.md): Use Elysia in Astro Endpoint
+- [Expo](https://elysiajs.com/integrations/expo.md): Use Elysia in Expo API Route
+- [Next.js](https://elysiajs.com/integrations/nextjs.md): Use Elysia in Next.js Route Handler
+- [Nuxt](https://elysiajs.com/integrations/nuxt.md): Use Elysia in Nuxt Server Route
+- [SvelteKit](https://elysiajs.com/integrations/sveltekit.md): Use Elysia in SvelteKit Endpoint
+- [AI SDK](https://elysiajs.com/integrations/ai-sdk.md): Integrate Vercel AI SDK with Elysia
+- [Better Auth](https://elysiajs.com/integrations/better-auth.md): Authentication with Better Auth
+- [Drizzle](https://elysiajs.com/integrations/drizzle.md): Type-safe database queries with Drizzle ORM
+- [Prisma](https://elysiajs.com/integrations/prisma.md): Database access with Prisma ORM
+- [React Email](https://elysiajs.com/integrations/react-email.md): Create email templates with JSX
+
+## Migration Guides
+
+- [From Express](https://elysiajs.com/migrate/from-express.md): Migrating from Express to Elysia
+- [From Fastify](https://elysiajs.com/migrate/from-fastify.md): Migrating from Fastify to Elysia
+- [From Hono](https://elysiajs.com/migrate/from-hono.md): Migrating from Hono to Elysia
+- [From tRPC](https://elysiajs.com/migrate/from-trpc.md): Migrating from tRPC to Elysia
+
+## Optional
+
+- [llms-full.txt](https://elysiajs.com/llms-full.txt): Full Elysia documentation in a single file for LLM consumption
+- [Blog](https://elysiajs.com/blog.md): Elysia blog posts and release notes
+- [Discord](https://discord.gg/eaFJ2KDJck): Official ElysiaJS Discord community server
+- [GitHub](https://github.com/elysiajs): Elysia source code and development

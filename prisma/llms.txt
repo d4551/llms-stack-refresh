@@ -1,0 +1,91 @@
+# Prisma
+
+> Prisma is a next-generation Node.js and TypeScript ORM that unlocks a new level of developer experience when working with databases thanks to its intuitive data model, automated migrations, type-safety & auto-completion.
+
+## Getting Started
+
+- [What is Prisma ORM?](https://www.prisma.io/docs/orm/overview/introduction/what-is-prisma): Overview of Prisma ORM and its components
+- [Why Prisma ORM?](https://www.prisma.io/docs/orm/overview/introduction/why-prisma): Motivation for Prisma's design approach
+- [Quickstart](https://www.prisma.io/docs/getting-started/quickstart-sqlite): Get started with Prisma in 5 minutes with SQLite
+- [Setup Prisma ORM](https://www.prisma.io/docs/getting-started/setup-prisma): Add Prisma to an existing project
+
+## Prisma ORM
+
+- [Prisma Schema](https://www.prisma.io/docs/orm/prisma-schema): Define your data model using Prisma Schema Language (PSL)
+- [Data sources](https://www.prisma.io/docs/orm/prisma-schema/overview/data-sources): Configure database connections
+- [Generators](https://www.prisma.io/docs/orm/prisma-schema/overview/generators): Configure code generators
+- [Data model](https://www.prisma.io/docs/orm/prisma-schema/data-model): Models, fields, types, and relations
+- [Relations](https://www.prisma.io/docs/orm/prisma-schema/data-model/relations): One-to-one, one-to-many, many-to-many relationships
+- [Prisma Client](https://www.prisma.io/docs/orm/prisma-client): Auto-generated type-safe query builder
+- [CRUD](https://www.prisma.io/docs/orm/prisma-client/queries/crud): Create, Read, Update, Delete operations
+- [Filtering and Sorting](https://www.prisma.io/docs/orm/prisma-client/queries/filtering-and-sorting): Filter and sort query results
+- [Select fields](https://www.prisma.io/docs/orm/prisma-client/queries/select-fields): Control which fields to return
+- [Relation queries](https://www.prisma.io/docs/orm/prisma-client/queries/relation-queries): Query related data with include and select
+- [Aggregation, grouping and summarizing](https://www.prisma.io/docs/orm/prisma-client/queries/aggregation-grouping-summarizing): Aggregate and group data
+- [Transactions](https://www.prisma.io/docs/orm/prisma-client/queries/transactions): Execute multiple operations atomically
+- [Raw database access](https://www.prisma.io/docs/orm/prisma-client/queries/raw-database-access): Execute raw SQL queries
+- [Full-text search](https://www.prisma.io/docs/orm/prisma-client/queries/full-text-search): Full-text search capabilities
+- [Client extensions](https://www.prisma.io/docs/orm/prisma-client/client-extensions): Extend Prisma Client with custom methods
+- [Middleware](https://www.prisma.io/docs/orm/prisma-client/client-extensions/middleware): Add custom logic before/after queries
+- [Logging](https://www.prisma.io/docs/orm/prisma-client/observability-and-logging/logging): Configure logging levels
+- [Error handling](https://www.prisma.io/docs/orm/reference/error-reference): Prisma error types and handling
+- [Prisma Migrate](https://www.prisma.io/docs/orm/prisma-migrate): Database schema migrations
+- [Migrate Dev](https://www.prisma.io/docs/orm/prisma-migrate/workflows/development-and-production): Development and production migration workflows
+- [Seeding](https://www.prisma.io/docs/orm/prisma-migrate/workflows/seeding): Seed your database with test data
+- [Prisma CLI](https://www.prisma.io/docs/orm/reference/prisma-cli-reference): CLI commands reference
+
+## Supported Databases
+
+- [PostgreSQL](https://www.prisma.io/docs/orm/overview/databases/postgresql): PostgreSQL database connector
+- [MySQL](https://www.prisma.io/docs/orm/overview/databases/mysql): MySQL database connector
+- [SQLite](https://www.prisma.io/docs/orm/overview/databases/sqlite): SQLite database connector
+- [Microsoft SQL Server](https://www.prisma.io/docs/orm/overview/databases/sql-server): SQL Server database connector
+- [MongoDB](https://www.prisma.io/docs/orm/overview/databases/mongodb): MongoDB database connector
+- [CockroachDB](https://www.prisma.io/docs/orm/overview/databases/cockroachdb): CockroachDB database connector
+
+## Guides
+
+- [Prisma with Next.js](https://www.prisma.io/docs/guides/nextjs): Use Prisma in Next.js applications
+- [Prisma with Express](https://www.prisma.io/docs/guides/express): Use Prisma with Express.js
+- [Prisma with NestJS](https://www.prisma.io/docs/guides/nestjs): Use Prisma with NestJS
+- [Prisma with Nuxt](https://www.prisma.io/docs/guides/nuxt): Use Prisma with Nuxt
+- [Prisma with Remix](https://www.prisma.io/docs/guides/remix): Use Prisma with Remix
+- [Prisma with Fastify](https://www.prisma.io/docs/guides/fastify): Use Prisma with Fastify
+- [Prisma with Hono](https://www.prisma.io/docs/guides/hono): Use Prisma with Hono
+- [Prisma with SvelteKit](https://www.prisma.io/docs/guides/sveltekit): Use Prisma with SvelteKit
+- [Prisma with Elysia](https://www.prisma.io/docs/guides/elysia): Use Prisma with Elysia
+- [Deployment to Vercel](https://www.prisma.io/docs/guides/deployment/deploying-to-vercel): Deploy Prisma apps to Vercel
+- [Deployment to Netlify](https://www.prisma.io/docs/guides/deployment/deploying-to-netlify): Deploy Prisma apps to Netlify
+- [Deployment to AWS Lambda](https://www.prisma.io/docs/guides/deployment/deploying-to-aws-lambda): Deploy Prisma apps to AWS Lambda
+- [Authentication](https://www.prisma.io/docs/guides/auth): Authentication patterns with Prisma
+- [Testing](https://www.prisma.io/docs/guides/testing): Testing Prisma-based applications
+- [Troubleshooting](https://www.prisma.io/docs/guides/troubleshooting): Common issues and solutions
+
+## Prisma Postgres
+
+- [Overview](https://www.prisma.io/docs/postgres/overview): Prisma-hosted serverless PostgreSQL
+- [Getting Started](https://www.prisma.io/docs/postgres/getting-started): Get started with Prisma Postgres
+- [Connection management](https://www.prisma.io/docs/postgres/connection-management): Connection pooling and management
+
+## Prisma Accelerate
+
+- [Overview](https://www.prisma.io/docs/accelerate/overview): Global database cache and connection pooling
+- [Getting Started](https://www.prisma.io/docs/accelerate/getting-started): Set up Prisma Accelerate
+
+## Prisma Pulse
+
+- [Overview](https://www.prisma.io/docs/pulse/overview): Real-time database subscriptions
+- [Getting Started](https://www.prisma.io/docs/pulse/getting-started): Set up Prisma Pulse
+
+## Reference
+
+- [Prisma Client API](https://www.prisma.io/docs/orm/reference/prisma-client-reference): Full Prisma Client API reference
+- [Prisma Schema Reference](https://www.prisma.io/docs/orm/reference/prisma-schema-reference): Prisma Schema Language specification
+- [Prisma CLI Reference](https://www.prisma.io/docs/orm/reference/prisma-cli-reference): CLI commands and options
+- [Environment variables](https://www.prisma.io/docs/orm/more/development-environment/environment-variables): Environment variable configuration
+
+## Optional
+
+- [llms-full.txt](https://www.prisma.io/docs/llms-full.txt): Full Prisma documentation for LLM consumption
+- [Blog](https://www.prisma.io/blog): Prisma blog posts and tutorials
+- [GitHub](https://github.com/prisma/prisma): Prisma source code
