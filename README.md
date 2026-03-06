@@ -1,17 +1,17 @@
 # llms-stack-refresh
 
-A curated collection of `llms.txt` files for the tools in a modern full-stack TypeScript/Bun workflow. Each file is sourced from official documentation or hand-crafted where no official file exists. All files are optimized for AI coding assistants and human contributors.
+> Purpose: Curated `llms.txt` documentation index for the Bun/Elysia/htmx/Prisma/Tailwind/daisyUI/EasyAuth stack. Optimised for AI agent context ingestion.
 
-## What is llms.txt?
-
-[`llms.txt`](https://llmstxt.org/) is a proposed standard for LLM-friendly documentation. Each file is a structured, Markdown-based index of key documentation links that AI tools can efficiently consume. The format: H1 title, blockquote summary, short intro, `##` sections, optional `## Optional` section.
+Each file is sourced from official documentation or curated from official primary-source documentation where no official file exists. Format spec: [llmstxt.org](https://llmstxt.org/).
 
 ## Repository Map
 
 ```
 llms-stack-refresh/
-├── README.md             You are here
+├── README.md             Repository overview and agent context routing
 ├── AGENTS.md             AI agent navigation rules and per-stack guidance
+├── CLAUDE.md             Anthropic Claude / Claude Code auto-discovery file
+├── CODEX.md              OpenAI Codex auto-discovery file
 ├── bun/llms.txt          Official Bun docs (runtime, bundler, plugins, macros, workspaces)
 ├── daisyui/llms.txt      Official daisyUI docs (components, themes, plugin config)
 ├── easy-auth/llms.txt    Curated EasyAuth docs (OAuth, sessions, Bun/Elysia integration)
@@ -19,12 +19,17 @@ llms-stack-refresh/
 ├── htmx/llms.txt         Curated htmx docs (attributes, headers, extensions)
 ├── prisma/llms.txt       Curated Prisma docs (schema, client, migrate, $extends)
 ├── tailwindcss/llms.txt  Curated Tailwind CSS docs (utilities, @apply, @plugin, @utility)
+├── .github/
+│   └── copilot-instructions.md  GitHub Copilot auto-discovery file
+├── .cursor/
+│   └── rules/llms-stack.mdc     Cursor rules file
+├── .clinerules           Cline auto-discovery file
+├── .windsurfrules        Windsurf/Codeium auto-discovery file
 └── docs/
     ├── INDEX.md          Canonical navigation map grouped by role
-    ├── CONTRIBUTING.md   How to add or improve an llms.txt
     ├── PROVENANCE.md     Sourcing and provenance policy
     ├── EXTENSIONS.md     Deep-dive reference for every tool's plugin/extension system
-    └── IDE-SETUP.md      Step-by-step setup for every major AI coding tool and IDE
+    └── IDE-SETUP.md      Setup directives for every major AI coding tool and IDE
 ```
 
 ## Included Files
@@ -68,7 +73,7 @@ Browser swaps partial into DOM (hx-target / hx-swap)
 
 ## Plugin / Extension / Customization
 
-Each tool in this stack has official extension mechanisms. AI agents and contributors must treat these as primary documentation, not advanced topics. The full deep-dive reference is in [`docs/EXTENSIONS.md`](./docs/EXTENSIONS.md).
+Each tool in this stack has official extension mechanisms. Treat these as primary documentation, not advanced topics. The full deep-dive reference is in [`docs/EXTENSIONS.md`](./docs/EXTENSIONS.md).
 
 ### Bun -- Plugin API
 
@@ -146,9 +151,9 @@ Each tool in this stack has official extension mechanisms. AI agents and contrib
 - **Reference in this repo**: `easy-auth/llms.txt` -- see Integration Patterns section
 - **Upstream docs**: https://easyauth.io/docs/
 
-## Using This Repository with AI Coding Tools
+## AI Coding Tool Integration
 
-This section provides concise setup instructions for each major AI coding tool. For full step-by-step instructions, see [`docs/IDE-SETUP.md`](./docs/IDE-SETUP.md).
+For full setup directives per tool, see [`docs/IDE-SETUP.md`](./docs/IDE-SETUP.md). Quick reference below.
 
 ### GitHub Copilot in VS Code
 
@@ -311,17 +316,5 @@ Direct links for use in AI tools:
 
 ## Contributing
 
-See [`docs/CONTRIBUTING.md`](./docs/CONTRIBUTING.md) for full instructions. In brief:
-
-1. Fork the repository.
-2. Create a directory with the technology name (lowercase, hyphens for spaces).
-3. Add `llms.txt` following the [llmstxt.org specification](https://llmstxt.org/).
-4. Update `README.md` and `docs/INDEX.md` with the new entry.
-5. Open a pull request with a clear description of the source used.
-
-Sourcing priority: official `llms.txt` → official docs GitHub repo → official docs website. See [`docs/PROVENANCE.md`](./docs/PROVENANCE.md) for the full policy.
-
-## Specification
-
-For the full `llms.txt` specification, see [llmstxt.org](https://llmstxt.org/).
+See [`docs/PROVENANCE.md`](./docs/PROVENANCE.md) for sourcing rules. Format spec: [llmstxt.org](https://llmstxt.org/).
 

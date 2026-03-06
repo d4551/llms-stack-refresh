@@ -4,7 +4,7 @@ This document defines the sourcing and provenance rules for all `llms.txt` files
 
 ## Why Provenance Matters
 
-AI agents and developers rely on the files in this repository to ground their code generation and reasoning. Low-quality or inaccurate sources produce low-quality outputs. Every item in an `llms.txt` must be traceable to an authoritative source.
+AI agents rely on the files in this repository to ground their code generation and reasoning. Low-quality or inaccurate sources produce low-quality outputs. Every item in an `llms.txt` must be traceable to an authoritative source.
 
 ## Source Tiers
 
@@ -43,8 +43,7 @@ The `docs/INDEX.md` table uses "Official" or "Curated — [URL]" in the Provenan
 
 ## Updating Stale Content
 
-If you discover that a link in an `llms.txt` is broken or the described behavior no longer matches the official docs:
+If a link in an `llms.txt` is broken or the described behavior no longer matches the official docs:
 
-1. Open an issue describing the stale content and the correct source.
-2. Submit a pull request that fixes the content and cites the updated source URL.
-3. Update the "Notes" column in `docs/INDEX.md` if the file was substantially refreshed.
+1. Update the file directly with the corrected content, citing the updated source URL.
+2. Update the "Notes" column in `docs/INDEX.md` if the file was substantially refreshed.

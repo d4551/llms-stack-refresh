@@ -1,6 +1,17 @@
 # AGENTS.md — AI Agent Navigation Guide
 
-This file tells AI agents and automated tools how to navigate, use, and contribute to this repository correctly.
+This file tells AI agents and automated tools how to navigate and use this repository.
+
+## Routing
+
+- IF agent is Anthropic Claude / Claude Code THEN also read `CLAUDE.md`
+- IF agent is OpenAI Codex THEN also read `CODEX.md`
+- IF agent is GitHub Copilot THEN also read `.github/copilot-instructions.md`
+- IF agent is Cursor THEN also read `.cursor/rules/llms-stack.mdc`
+- IF agent is Cline THEN also read `.clinerules`
+- IF agent is Windsurf/Codeium THEN also read `.windsurfrules`
+- IF agent is Aider THEN use `--read` flag with relevant `llms.txt` files
+- FOR ALL agents: read `docs/INDEX.md` for file routing, `docs/EXTENSIONS.md` for plugin/extension APIs, `docs/IDE-SETUP.md` for tool-specific setup
 
 ## Repository Purpose
 
@@ -10,8 +21,10 @@ This file tells AI agents and automated tools how to navigate, use, and contribu
 
 ```
 llms-stack-refresh/
-├── README.md            # Human and AI entry point; repo overview
+├── README.md            # Repository overview and agent context routing
 ├── AGENTS.md            # This file — AI agent instructions
+├── CLAUDE.md            # Anthropic Claude / Claude Code auto-discovery file
+├── CODEX.md             # OpenAI Codex auto-discovery file
 ├── bun/llms.txt         # Official Bun docs index
 ├── daisyui/llms.txt     # Official daisyUI docs index
 ├── easy-auth/llms.txt   # Curated EasyAuth docs index (no official file exists)
@@ -19,15 +32,31 @@ llms-stack-refresh/
 ├── htmx/llms.txt        # Curated htmx docs index
 ├── prisma/llms.txt      # Curated Prisma docs index
 ├── tailwindcss/llms.txt # Curated Tailwind CSS docs index
+├── .github/
+│   └── copilot-instructions.md  # GitHub Copilot auto-discovery file
+├── .cursor/
+│   └── rules/llms-stack.mdc     # Cursor rules file
+├── .clinerules          # Cline auto-discovery file
+├── .windsurfrules       # Windsurf/Codeium auto-discovery file
 └── docs/
     ├── INDEX.md         # Canonical navigation map
-    ├── CONTRIBUTING.md  # Contribution guide
     ├── PROVENANCE.md    # Provenance policy
     ├── EXTENSIONS.md    # Deep-dive reference for every tool's extension/plugin system
-    └── IDE-SETUP.md     # Step-by-step setup for every AI coding tool and IDE
+    └── IDE-SETUP.md     # Setup directives for every major AI coding tool and IDE
 ```
 
 **Do not rename or move existing directories.** The raw GitHub URLs for each `llms.txt` are used directly by AI tools and users; changing paths breaks those references.
+
+## Agent-Specific Instruction Files
+
+| File | Agent | Auto-read behavior |
+|------|-------|--------------------|
+| `CLAUDE.md` | Anthropic Claude / Claude Code | Read automatically by Claude Code on project load |
+| `CODEX.md` | OpenAI Codex | Read automatically by Codex on repo context load |
+| `.github/copilot-instructions.md` | GitHub Copilot | Loaded automatically on every Copilot Chat session |
+| `.cursor/rules/llms-stack.mdc` | Cursor | Applied when globs match (`**/*.ts`, `**/*.html`, `**/*.css`) |
+| `.clinerules` | Cline | Read automatically when a task starts in the workspace |
+| `.windsurfrules` | Windsurf/Codeium | Loaded as persistent rules for the workspace |
 
 ## Rules for AI Agents
 

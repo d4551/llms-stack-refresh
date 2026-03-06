@@ -1,0 +1,21 @@
+## Documentation Context
+
+When working on this project, reference the following documentation files for context:
+
+- Bun: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/bun/llms.txt
+- ElysiaJS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/elysiajs/llms.txt
+- htmx: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/htmx/llms.txt
+- Prisma: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/prisma/llms.txt
+- Tailwind CSS: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/tailwindcss/llms.txt
+- daisyUI: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/daisyui/llms.txt
+- EasyAuth: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/easy-auth/llms.txt
+- Plugin/extension systems: https://raw.githubusercontent.com/d4551/llms-stack-refresh/main/docs/EXTENSIONS.md
+
+## Stack Conventions
+
+- Runtime: Bun (not Node.js)
+- HTTP framework: Elysia
+- Database ORM: Prisma
+- UI interactivity: htmx (no JavaScript framework)
+- Styling: Tailwind CSS + daisyUI
+- Auth: EasyAuth

@@ -1,6 +1,6 @@
 # Repository Index
 
-Canonical navigation map for `llms-stack-refresh`. Use this file to locate the correct `llms.txt` for a given technology.
+Canonical file routing map. Consume this file to resolve technology name to `llms.txt` path.
 
 ## Runtime / Backend
 
@@ -40,11 +40,16 @@ Canonical navigation map for `llms-stack-refresh`. Use this file to locate the c
 |------|---------|
 | [`README.md`](../README.md) | Repository overview, usage with AI tools, stack composition guide |
 | [`AGENTS.md`](../AGENTS.md) | AI agent navigation rules, structure rules, per-stack plugin/extension guidance |
+| [`CLAUDE.md`](../CLAUDE.md) | Anthropic Claude / Claude Code auto-discovery context file |
+| [`CODEX.md`](../CODEX.md) | OpenAI Codex auto-discovery context file |
+| [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) | GitHub Copilot auto-discovery context file |
+| [`.cursor/rules/llms-stack.mdc`](../.cursor/rules/llms-stack.mdc) | Cursor rules file |
+| [`.clinerules`](../.clinerules) | Cline auto-discovery context file |
+| [`.windsurfrules`](../.windsurfrules) | Windsurf/Codeium auto-discovery context file |
 | [`docs/INDEX.md`](INDEX.md) | This file — canonical navigation map |
-| [`docs/CONTRIBUTING.md`](CONTRIBUTING.md) | How to add or improve an `llms.txt` |
 | [`docs/PROVENANCE.md`](PROVENANCE.md) | Provenance policy and sourcing rules |
 | [`docs/EXTENSIONS.md`](EXTENSIONS.md) | Deep-dive reference for every tool's plugin/extension/customization system |
-| [`docs/IDE-SETUP.md`](IDE-SETUP.md) | Step-by-step setup instructions for every major AI coding tool and IDE |
+| [`docs/IDE-SETUP.md`](IDE-SETUP.md) | Setup directives for every major AI coding tool and IDE |
 
 ## Provenance Key
 
